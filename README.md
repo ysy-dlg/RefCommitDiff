@@ -1,4 +1,4 @@
 # RefDiff
 Language-agnostic Refactoring Detection
 
-## Database Creation
+## Tables in commit_diff_db
