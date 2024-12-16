@@ -6,7 +6,7 @@
 # RefCommitDiff
 Language-agnostic Refactoring Detection
 
-## all_commit_diff_db
+## commit_diff_db
 Testing Phase Version.
 
 Considering the data volume in the later stages, I chose MySQL instead of SQLite.
