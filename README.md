@@ -10,7 +10,6 @@ Currently, I am using `git log --all`. In the future, I may consider adding opti
 
 ### Tables in all_commit_diff_db
 
-
 There are six tables `repository`, `refactor_keywords`, `mbassador_all_original_commits`,`mbassador_all_finergit_commits`,`mbassador_all_diff_lines`, and `hayashi_mbassador` in all_commit_diff_db.
 ```shell-session
 mysql> show tables;
@@ -27,7 +26,6 @@ mysql> show tables;
 ```
 
 ### Table `mbassador_all_original_commits`
-
 
 The schema of table `mbassador_all_original_commits` is as follows.
 
@@ -120,3 +118,32 @@ mysql> desc mbassador_all_diff_lines;
 - `token_type`, Type of token. If empty, it is a comment and can be ignored. JAVADOC comments are also considered comments and can be ignored.
 - `token_value`, Refactoring keyword ID, linked to the refactor_keywords table.
 - `refactor_type`, Value of the token.
+
+### Table `hayashi_mbassador`
+
+The schema of table `hayashi_mbassador` is as follows.
+
+```shell-session
+mysql> desc hayashi_mbassador;
++-----------------------+------------------+------+-----+---------+----------------+
+| Field                 | Type             | Null | Key | Default | Extra          |
++-----------------------+------------------+------+-----+---------+----------------+
+| id                    | int              | NO   | PRI | NULL    | auto_increment |
+| commit_id             | varchar(7)       | NO   |     | NULL    |                |
+| commit_note           | varchar(10)      | NO   |     | NULL    |                |
+| file_similarity_score | tinyint unsigned | NO   |     | NULL    |                |
+| change_type           | varchar(30)      | NO   |     | NULL    |                |
+| change_type_info      | text             | NO   |     | NULL    |                |
+| original_file_path    | varchar(255)     | NO   |     | NULL    |                |
+| new_file_path         | varchar(255)     | NO   |     | NULL    |                |
++-----------------------+------------------+------+-----+---------+----------------+
+```
+
+- `id`, Auto-increment primary key.
+- `commit_id` Represents the commit ID of the tokenized repository, mbassador.
+- `commit_note`, Represents the original repository commit ID.
+- `file_similarity_score`, Represents the similarity score assigned by Git when it detects a file rename or movement, indicating the percentage of similarity between the original file and the new file.
+- `change_type`, will be changed to `refactor_type` later.
+- `change_type_info`, will be changed to `refactor_type_info` later.
+- `original_file_path`, Path to the file in its original state before the commit.
+- `new_file_path`, Path to the file after the commit.
