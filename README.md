@@ -1,5 +1,6 @@
 # Weekly progress report
-* [report](./Weekly progress report/report.md)
+* [Report](./Weekly%20progress%20report/report.md)
+
 
 
 # RefCommitDiff
