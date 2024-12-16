@@ -13,29 +13,29 @@ Considering the data volume in the later stages, I chose MySQL instead of SQLite
 
 Currently, I am using `git log --all`. In the future, I may consider adding options to exclude merge commits and other entries.
 
-### Tables in all_commit_diff_db
+### Tables in commit_diff_db
 
-There are six tables `repository`, `refactor_keywords`, `mbassador_all_original_commits`,`mbassador_all_finergit_commits`,`mbassador_all_diff_lines`, and `hayashi_mbassador` in all_commit_diff_db.
+There are six tables `repository`, `refactor_keywords`, `mbassador_original_commits`,`mbassador_finergit_original_mapping`,`mbassador_finergit_commits_hayashi`, and `mbassador_diff_lines` in commit_diff_db.
 ```shell-session
 mysql> show tables;
-+--------------------------------+
-| Tables_in_all_commit_diff_db   |
-+--------------------------------+
-| hayashi_mbassador              |
-| mbassador_all_diff_lines       |
-| mbassador_all_finergit_commits |
-| mbassador_all_original_commits |
-| refactor_keywords              |
-| repository                     |
-+--------------------------------+
++-------------------------------------+
+| Tables_in_commit_diff_db            |
++-------------------------------------+
+| mbassador_diff_lines                |
+| mbassador_finergit_commits_hayashi  |
+| mbassador_finergit_original_mapping |
+| mbassador_original_commits          |
+| refactor_keywords                   |
+| repository                          |
++-------------------------------------+
 ```
 
-### Table `mbassador_all_original_commits`
+### Table `mbassador_original_commits`
 
-The schema of table `mbassador_all_original_commits` is as follows.
+The schema of table `mbassador_original_commits` is as follows.
 
 ```shell-session
-mysql> desc mbassador_all_original_commits;
+mysql> desc mbassador_original_commits;
 +------------------------+--------------+------+-----+---------+-------+
 | Field                  | Type         | Null | Key | Default | Extra |
 +------------------------+--------------+------+-----+---------+-------+
@@ -65,12 +65,12 @@ mysql> desc mbassador_all_original_commits;
 
 **`is_code_file_modified`** can help filter out commits that do not contain code file (e.g..java) changes.
 
-### Table `mbassador_all_finergit_commits`
+### Table `mbassador_finergit_original_mapping`
 
-The schema of table `mbassador_all_finergit_commits` is as follows.
+The schema of table `mbassador_finergit_original_mapping` is as follows.
 
 ```shell-session
-mysql> desc mbassador_all_finergit_commits;
+mysql> desc mbassador_finergit_original_mapping;
 +--------------------+-------------+------+-----+---------+-------+
 | Field              | Type        | Null | Key | Default | Extra |
 +--------------------+-------------+------+-----+---------+-------+
@@ -86,13 +86,13 @@ mysql> desc mbassador_all_finergit_commits;
   
 This table stores the mapping between the commit IDs of the original repository and the tokenized repository.
 
-### Table `mbassador_all_diff_lines`
+### Table `mbassador_diff_lines`
 
 
-The schema of table `mbassador_all_diff_lines` is as follows.
+The schema of table `mbassador_diff_lines` is as follows.
 
 ```shell-session
-mysql> desc mbassador_all_diff_lines;
+mysql> desc mbassador_diff_lines;
 +---------------+---------------+------+-----+---------+----------------+
 | Field         | Type          | Null | Key | Default | Extra          |
 +---------------+---------------+------+-----+---------+----------------+
@@ -111,10 +111,10 @@ mysql> desc mbassador_all_diff_lines;
 +---------------+---------------+------+-----+---------+----------------+
 ```
 
-The example of table `mbassador_all_diff_lines` is as follows.
+The example of table `mbassador_diff_lines` is as follows.
 
 ```shell-session
-mysql> select * from  mbassador_all_diff_lines limit 5;
+mysql> select * from  mbassador_diff_lines limit 5;
 +----+------------------------------------------+-------------------------------------------------------+---------------------------------------+---------------------+---------+-----------------+---------+-------------+----------------+-----------------------------------------------------------------------------------------------------------------------+---------------+
 | id | commit_id                                | file_name                                             | file_path                             | commit_date         | hunk_id | hunk_header     | line_id | change_type | token_type     | token_value                                                                                                           | refactor_type |
 +----+------------------------------------------+-------------------------------------------------------+---------------------------------------+---------------------+---------+-----------------+---------+-------------+----------------+-----------------------------------------------------------------------------------------------------------------------+---------------+
@@ -140,24 +140,24 @@ mysql> select * from  mbassador_all_diff_lines limit 5;
 - `token_value`, Refactoring keyword ID, linked to the refactor_keywords table.
 - `refactor_type`, Value of the token.
 
-### Table `hayashi_mbassador`
+### Table `mbassador_finergit_commits_hayashi`
 
-The schema of table `hayashi_mbassador` is as follows.
+The schema of table `mbassador_finergit_commits_hayashi` is as follows.
 
 ```shell-session
-mysql> desc hayashi_mbassador;
-+-----------------------+------------------+------+-----+---------+----------------+
-| Field                 | Type             | Null | Key | Default | Extra          |
-+-----------------------+------------------+------+-----+---------+----------------+
-| id                    | int              | NO   | PRI | NULL    | auto_increment |
-| commit_id             | varchar(7)       | NO   |     | NULL    |                |
-| commit_note           | varchar(10)      | NO   |     | NULL    |                |
-| file_similarity_score | tinyint unsigned | NO   |     | NULL    |                |
-| change_type           | varchar(30)      | NO   |     | NULL    |                |
-| change_type_info      | text             | NO   |     | NULL    |                |
-| original_file_path    | varchar(255)     | NO   |     | NULL    |                |
-| new_file_path         | varchar(255)     | NO   |     | NULL    |                |
-+-----------------------+------------------+------+-----+---------+----------------+
+mysql> desc mbassador_finergit_commits_hayashi;
++-----------------------+--------------+------+-----+---------+----------------+
+| Field                 | Type         | Null | Key | Default | Extra          |
++-----------------------+--------------+------+-----+---------+----------------+
+| id                    | int          | NO   | PRI | NULL    | auto_increment |
+| commit_id             | varchar(40)  | NO   |     | NULL    |                |
+| original_commit_id    | varchar(40)  | NO   |     | NULL    |                |
+| file_similarity_score | int          | NO   |     | NULL    |                |
+| change_type           | varchar(30)  | NO   |     | NULL    |                |
+| change_type_info      | text         | NO   |     | NULL    |                |
+| old_file_path         | varchar(255) | NO   |     | NULL    |                |
+| new_file_path         | varchar(255) | NO   |     | NULL    |                |
++-----------------------+--------------+------+-----+---------+----------------+
 ```
 
 - `id`, Auto-increment primary key.
@@ -166,7 +166,7 @@ mysql> desc hayashi_mbassador;
 - `file_similarity_score`, Represents the similarity score assigned by Git when it detects a file rename or movement, indicating the percentage of similarity between the original file and the new file.
 - `change_type`, A high-level label that categorizes the type of change detected in the file.
 - `change_type_info`, A detailed description of the detected change.
-- `original_file_path`, Path to the file in its original state before the commit.
+- `old_file_path`, Path to the file in its original state before the commit.
 - `new_file_path`, Path to the file after the commit.
 
 ### Table `refactor_keywords`
@@ -220,19 +220,8 @@ mysql> desc repository;
 - **Move and Rename Method**: A method is moved to another class and renamed.  
 - **Move and Rename Method+**: A method is moved to another class, renamed, and its parameters are changed.  
 
-#### **Rename Method**
 
-#### **Change Parameter**
 
-#### **Rename Method+**
-
-#### **Move Method**
-
-#### **Move Method+**
-
-#### **Move and Rename Method**
-
-#### **Move and Rename Method+** 
 
 
 
