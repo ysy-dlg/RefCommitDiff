@@ -222,25 +222,6 @@ mysql> desc repository;
 
 #### **Rename Method**
 
-In `mbassador_all_diff_lines`:
-- File: The `file_name` remains unchanged.
-- Hunk: The method declaration line (`token_type` = 'METHOD') shows a `-` line with the old method name and a `+` line with the new method name.
-- Token Value: The `token_value` in `+` and `-` lines differs, representing the old and new method names.
-
-```shell-session
-SELECT a.file_name, a.token_value AS old_method, b.token_value AS new_method
-FROM mbassador_all_diff_lines a
-JOIN mbassador_all_diff_lines b
-  ON a.commit_id = b.commit_id
-  AND a.file_name = b.file_name
-  AND a.hunk_id = b.hunk_id
-WHERE a.change_type = '-' 
-  AND b.change_type = '+'
-  AND a.token_type = 'METHOD'
-  AND b.token_type = 'METHOD';
-
-```
-
 #### **Change Parameter**
 
 #### **Rename Method+**
