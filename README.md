@@ -147,3 +147,43 @@ mysql> desc hayashi_mbassador;
 - `change_type_info`, will be changed to `refactor_type_info` later.
 - `original_file_path`, Path to the file in its original state before the commit.
 - `new_file_path`, Path to the file after the commit.
+
+### Table `refactor_keywords`
+
+The schema of table `refactor_keywords` is as follows.
+
+```shell-session
+mysql> desc refactor_keywords;
++-----------------+-------------+------+-----+---------+----------------+
+| Field           | Type        | Null | Key | Default | Extra          |
++-----------------+-------------+------+-----+---------+----------------+
+| id              | int         | NO   | PRI | NULL    | auto_increment |
+| keyword_type    | varchar(50) | NO   |     | NULL    |                |
+| keyword_content | varchar(50) | NO   |     | NULL    |                |
++-----------------+-------------+------+-----+---------+----------------+
+```
+
+- `id`, Keyword ID, auto-increment primary key.
+- `keyword_type`, Refactoring type keyword (e.g., "rename method," "change parameter type").
+- `keyword_content`, Content of the keyword: Keywords or phrases in commit messages that can be associated with this refactoring type.
+
+### Table `repository`
+
+The schema of table `repository` is as follows.
+
+```shell-session
+mysql> desc repository;
++-----------------+--------------+------+-----+---------+----------------+
+| Field           | Type         | Null | Key | Default | Extra          |
++-----------------+--------------+------+-----+---------+----------------+
+| id              | int          | NO   | PRI | NULL    | auto_increment |
+| repository_url  | text         | NO   |     | NULL    |                |
+| repository_name | varchar(255) | YES  |     | NULL    |                |
+| language        | varchar(50)  | NO   |     | NULL    |                |
++-----------------+--------------+------+-----+---------+----------------+
+```
+
+- `id`, Repository ID, auto-increment primary key.
+- `repository_url`, Repository URL.
+- `repository_name`, Name of the repository.
+- `language`, Primary programming language of the repository (e.g., Java, Python).
