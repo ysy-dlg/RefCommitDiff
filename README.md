@@ -1,3 +1,7 @@
+# Weekly progress report
+* [report](./s-yang/README.md)
+
+
 # RefCommitDiff
 Language-agnostic Refactoring Detection
 
