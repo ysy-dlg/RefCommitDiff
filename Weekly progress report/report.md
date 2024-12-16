@@ -7,7 +7,8 @@
 - Identifying Potential Refactoring Commits (mbassador)
   1. Use `is_code_file_modified = 1` from `mbassador_all_original_commits` to filter out commits that do not involve code file changes. ➡️ 110 commits
   2. Combine manual analysis and GPT-4.0 to determine potential refactoring based on commit information, file changes, and diff code, and label the possible refactoring types. ➡️ 80 commits
-  3. For mbassador, Hayashi-sensei obtained 547 refactoring instances by detecting file name changes. Using the same logic, I obtained 455 refactoring instances.     
+  3. Summarized refactoring keywords: 
+  4. For mbassador, Hayashi-sensei obtained 547 refactoring instances by detecting file name changes. Using the same logic, I obtained 455 refactoring instances.     
 
 
     
@@ -16,4 +17,5 @@
 - 
 ### To do
 - The step **Combine manual analysis and GPT-4.0 to determine potential refactoring** did not yield satisfactory results.
+  - Attempting to summarize keywords, but the results do not seem satisfactory.
   - Considering creating prompt engineering to let GPT-4.0 handle the task of determining potential refactoring types.
