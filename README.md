@@ -192,3 +192,6 @@ mysql> desc repository;
 - `repository_url`, Repository URL.
 - `repository_name`, Name of the repository.
 - `language`, Primary programming language of the repository (e.g., Java, Python).
+
+
+## Patterns of each refactoring type in commits
