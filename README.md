@@ -164,8 +164,8 @@ mysql> desc hayashi_mbassador;
 - `commit_id` Represents the commit ID of the tokenized repository, mbassador.
 - `commit_note`, Represents the original repository commit ID.
 - `file_similarity_score`, Represents the similarity score assigned by Git when it detects a file rename or movement, indicating the percentage of similarity between the original file and the new file.
-- `change_type`, will be changed to `refactor_type` later.
-- `change_type_info`, will be changed to `refactor_type_info` later.
+- `change_type`, A high-level label that categorizes the type of change detected in the file.
+- `change_type_info`, A detailed description of the detected change.
 - `original_file_path`, Path to the file in its original state before the commit.
 - `new_file_path`, Path to the file after the commit.
 
@@ -221,6 +221,25 @@ mysql> desc repository;
 - **Move and Rename Method+**: A method is moved to another class, renamed, and its parameters are changed.  
 
 #### **Rename Method**
+
+In `mbassador_all_diff_lines`:
+- File: The `file_name` remains unchanged.
+- Hunk: The method declaration line (`token_type` = 'METHOD') shows a `-` line with the old method name and a `+` line with the new method name.
+- Token Value: The `token_value` in `+` and `-` lines differs, representing the old and new method names.
+
+```shell-session
+SELECT a.file_name, a.token_value AS old_method, b.token_value AS new_method
+FROM mbassador_all_diff_lines a
+JOIN mbassador_all_diff_lines b
+  ON a.commit_id = b.commit_id
+  AND a.file_name = b.file_name
+  AND a.hunk_id = b.hunk_id
+WHERE a.change_type = '-' 
+  AND b.change_type = '+'
+  AND a.token_type = 'METHOD'
+  AND b.token_type = 'METHOD';
+
+```
 
 #### **Change Parameter**
 
