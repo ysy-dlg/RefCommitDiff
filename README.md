@@ -216,7 +216,7 @@ mysql> desc repository;
 
 Research Approach: Summarizing Refactoring Type Patterns and Detecting Instances
 
-systematically summarize the behavioral patterns of each refactoring type, progressing step by step from the line level → method level → file level → original commit level. 
+original commit level → file level → method level → line level (hunk level)
 
 Based on the summarized patterns, design rules or automated tools to detect refactoring instances.
 
