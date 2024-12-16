@@ -111,6 +111,22 @@ mysql> desc mbassador_all_diff_lines;
 +---------------+---------------+------+-----+---------+----------------+
 ```
 
+The example of table `mbassador_all_diff_lines` is as follows.
+
+```shell-session
+mysql> select * from  mbassador_all_diff_lines limit 5;
++----+------------------------------------------+-------------------------------------------------------+---------------------------------------+---------------------+---------+-----------------+---------+-------------+----------------+-----------------------------------------------------------------------------------------------------------------------+---------------+
+| id | commit_id                                | file_name                                             | file_path                             | commit_date         | hunk_id | hunk_header     | line_id | change_type | token_type     | token_value                                                                                                           | refactor_type |
++----+------------------------------------------+-------------------------------------------------------+---------------------------------------+---------------------+---------+-----------------+---------+-------------+----------------+-----------------------------------------------------------------------------------------------------------------------+---------------+
+|  1 | 10517dce9b4a86b9f49c24a86bb4b84a76eb545b | AbstractConcurrentSet#private_boolean_insert(T).mjava | src/main/java/net/engio/mbassy/common | 2015-08-31 21:02:31 |       0 | @@ -1,3 +1,6 @@ |       0 | +           |                | /**                                                                                                                   | NULL          |
+|  2 | 10517dce9b4a86b9f49c24a86bb4b84a76eb545b | AbstractConcurrentSet#private_boolean_insert(T).mjava | src/main/java/net/engio/mbassy/common | 2015-08-31 21:02:31 |       0 | @@ -1,3 +1,6 @@ |       1 | +           |                |  * Inserts a new element at the head of the set. Note: This method is expected to be synchronized by the calling code | NULL          |
+|  3 | 10517dce9b4a86b9f49c24a86bb4b84a76eb545b | AbstractConcurrentSet#private_boolean_insert(T).mjava | src/main/java/net/engio/mbassy/common | 2015-08-31 21:02:31 |       0 | @@ -1,3 +1,6 @@ |       2 | +           | JAVADOCCOMMENT |  */                                                                                                                   | NULL          |
+|  4 | 08f6982fa51b4712bea086347e5cfd76ee94bae2 | AbstractConcurrentSet#private_boolean_insert(T).mjava | src/main/java/net/engio/mbassy/common | 2015-02-25 11:32:43 |       0 | @@ -1,5 +1,5 @@ |       1 | -           | VOID           | void                                                                                                                  | NULL          |
+|  5 | 08f6982fa51b4712bea086347e5cfd76ee94bae2 | AbstractConcurrentSet#private_boolean_insert(T).mjava | src/main/java/net/engio/mbassy/common | 2015-02-25 11:32:43 |       0 | @@ -1,5 +1,5 @@ |       2 | +           | BOOLEAN        | boolean                                                                                                               | NULL          |
++----+------------------------------------------+-------------------------------------------------------+---------------------------------------+---------------------+---------+-----------------+---------+-------------+----------------+-----------------------------------------------------------------------------------------------------------------------+---------------+
+```
+
+
 - `id`, Auto-increment primary key.
 - `commit_id`, Represents the commit ID of a repository tokenized using FinerGit.
 - `file_name`, File name of the .mjava file, without path information.
@@ -203,3 +219,20 @@ mysql> desc repository;
 - **Move Method+**: A method is moved to another class with changes to its name or parameters.  
 - **Move and Rename Method**: A method is moved to another class and renamed.  
 - **Move and Rename Method+**: A method is moved to another class, renamed, and its parameters are changed.  
+
+#### **Rename Method**
+
+#### **Change Parameter**
+
+#### **Rename Method+**
+
+#### **Move Method**
+
+#### **Move Method+**
+
+#### **Move and Rename Method**
+
+#### **Move and Rename Method+** 
+
+
+
