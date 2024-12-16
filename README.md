@@ -223,3 +223,213 @@ Based on the summarized patterns, design rules or automated tools to detect refa
 
 ## RefactoringMiner-supported refactoring types
 
+Below is the classification of RefactoringMiner-supported refactoring types by **subject** (method, variable, class, attribute, etc.), with each category further divided by subject type and related operation types.
+
+---
+
+### **Method-Related Refactorings**
+#### **Addition, Deletion, Renaming, and Moving of Methods**
+- **Addition**:
+  - Add Method Annotation
+  - Add Method Modifier (final, static, abstract, synchronized)
+  - Add Thrown Exception Type
+- **Deletion**:
+  - Remove Method Annotation
+  - Remove Method Modifier (final, static, abstract, synchronized)
+  - Remove Thrown Exception Type
+- **Renaming**:
+  - Rename Method
+- **Moving**:
+  - Move Method
+  - Move and Rename Method
+  - Move and Inline Method
+
+#### **Adjustments to Method Content**
+- **Extraction**:
+  - Extract Method
+  - Extract and Move Method
+- **Inlining**:
+  - Inline Method
+- **Parameter Adjustments**:
+  - Add Parameter
+  - Remove Parameter
+  - Reorder Parameter
+  - Localize Parameter
+- **Modification**:
+  - Modify Method Annotation
+  - Change Method Access Modifier
+  - Change Return Type
+  - Change Thrown Exception Type
+- **Merging and Splitting**:
+  - Merge Method
+  - Split Method
+
+#### **Specific Refactorings**
+- Replace Loop with Pipeline
+- Replace Pipeline with Loop
+- Replace Conditional With Ternary
+- Replace Anonymous with Lambda
+- Replace Anonymous with Class
+
+---
+
+### **Variable-Related Refactorings**
+#### **Addition, Deletion, Renaming, and Moving of Variables**
+- **Addition**:
+  - Add Variable Annotation
+  - Add Variable Modifier (final)
+- **Deletion**:
+  - Remove Variable Annotation
+  - Remove Variable Modifier (final)
+- **Renaming**:
+  - Rename Variable
+  - Parameterize Variable
+- **Moving**:
+  - Replace Variable with Attribute
+
+#### **Adjustments to Variable Content**
+- **Extraction**:
+  - Extract Variable
+- **Inlining**:
+  - Inline Variable
+- **Type Modification**:
+  - Change Variable Type
+  - Change Parameter Type
+- **Merging and Splitting**:
+  - Merge Variable
+  - Split Variable
+
+---
+
+### **Attribute-Related Refactorings**
+#### **Addition, Deletion, Renaming, and Moving of Attributes**
+- **Addition**:
+  - Add Attribute Annotation
+  - Add Attribute Modifier (final, static, transient, volatile)
+- **Deletion**:
+  - Remove Attribute Annotation
+  - Remove Attribute Modifier (final, static, transient, volatile)
+- **Renaming**:
+  - Rename Attribute
+  - Move and Rename Attribute
+- **Moving**:
+  - Move Attribute
+  - Replace Attribute with Variable
+
+#### **Adjustments to Attribute Content**
+- **Extraction**:
+  - Extract Attribute
+- **Inlining**:
+  - Inline Attribute
+- **Type Modification**:
+  - Change Attribute Type
+- **Encapsulation**:
+  - Encapsulate Attribute
+  - Parameterize Attribute
+- **Merging and Splitting**:
+  - Merge Attribute
+  - Split Attribute
+
+---
+
+### **Class-Related Refactorings**
+#### **Addition, Deletion, Renaming, and Moving of Classes**
+- **Addition**:
+  - Add Class Annotation
+  - Add Class Modifier (final, static, abstract)
+- **Deletion**:
+  - Remove Class Annotation
+  - Remove Class Modifier (final, static, abstract)
+- **Renaming**:
+  - Rename Class
+  - Move and Rename Class
+- **Moving**:
+  - Move Class
+  - Move Package
+  - Split Package
+  - Merge Package
+
+#### **Adjustments to Class Structure**
+- **Extraction**:
+  - Extract Class
+  - Extract Subclass
+  - Extract Superclass
+  - Extract Interface
+- **Inlining**:
+  - Inline Attribute
+- **Hierarchy Adjustments**:
+  - Collapse Hierarchy
+- **Type Declaration Modification**:
+  - Change Type Declaration Kind (class, interface, enum, annotation, record)
+- **Merging and Splitting**:
+  - Merge Class
+  - Split Class
+
+---
+
+### **Package-Related Refactorings**
+- Rename Package  
+- Move Package  
+- Split Package  
+- Merge Package  
+
+---
+
+### **Annotation-Related Refactorings**
+#### **Method Annotations**
+- Add Method Annotation
+- Remove Method Annotation
+- Modify Method Annotation
+#### **Attribute Annotations**
+- Add Attribute Annotation
+- Remove Attribute Annotation
+- Modify Attribute Annotation
+#### **Class Annotations**
+- Add Class Annotation
+- Remove Class Annotation
+- Modify Class Annotation
+#### **Parameter Annotations**
+- Add Parameter Annotation
+- Remove Parameter Annotation
+- Modify Parameter Annotation
+#### **Variable Annotations**
+- Add Variable Annotation
+- Remove Variable Annotation
+- Modify Variable Annotation
+
+---
+
+### **Other Refactorings**
+#### **Modifier-Related**
+- Add Method Modifier (final, static, abstract, synchronized)
+- Remove Method Modifier (final, static, abstract, synchronized)
+- Add Attribute Modifier (final, static, transient, volatile)
+- Remove Attribute Modifier (final, static, transient, volatile)
+- Add Class Modifier (final, static, abstract)
+- Remove Class Modifier (final, static, abstract)
+- Add Variable Modifier (final)
+- Remove Variable Modifier (final)
+
+#### **Test-Related**
+- Parameterize Test (JUnit 5 @ParameterizedTest with @ValueSource)
+- Assert Throws
+
+#### **Conditions and Exception Handling**
+- Split Conditional
+- Merge Conditional
+- Invert Condition
+- Merge Catch
+- Add Thrown Exception Type
+- Remove Thrown Exception Type
+
+#### **Migration-Related**
+- Replace Loop with Pipeline
+- Replace Pipeline with Loop
+- Replace Conditional With Ternary
+- Replace Anonymous with Lambda
+- Replace Anonymous with Class
+- Replace Generic With Diamond
+- Try With Resources
+
+---
+
