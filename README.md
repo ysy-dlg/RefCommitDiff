@@ -221,6 +221,9 @@ systematically summarize the behavioral patterns of each refactoring type, progr
 Based on the summarized patterns, design rules or automated tools to detect refactoring instances.
 
 
+
+
+
 ## RefactoringMiner-supported refactoring types
 
 Below is the classification of RefactoringMiner-supported refactoring types by **subject** (method, variable, class, attribute, etc.), with each category further divided by subject type and related operation types.
