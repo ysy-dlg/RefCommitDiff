@@ -32,6 +32,7 @@ mysql> show tables;
 The schema of table `mbassador_all_original_commits` is as follows.
 
 ```shell-session
+mysql> desc mbassador_all_original_commits;
 +------------------------+--------------+------+-----+---------+-------+
 | Field                  | Type         | Null | Key | Default | Extra |
 +------------------------+--------------+------+-----+---------+-------+
@@ -60,3 +61,22 @@ The schema of table `mbassador_all_original_commits` is as follows.
 - `commit_date`, The full date and time of the commit in standardized UTC format.
 
 **`is_code_file_modified`** can help filter out commits that do not contain code file (e.g..java) changes.
+
+The schema of table `mbassador_all_finergit_commits` is as follows.
+
+```shell-session
+mysql> desc mbassador_all_finergit_commits;
++--------------------+-------------+------+-----+---------+-------+
+| Field              | Type        | Null | Key | Default | Extra |
++--------------------+-------------+------+-----+---------+-------+
+| commit_id          | varchar(40) | NO   | PRI | NULL    |       |
+| original_commit_id | varchar(7)  | NO   |     | NULL    |       |
+| commit_date        | timestamp   | YES  |     | NULL    |       |
++--------------------+-------------+------+-----+---------+-------+
+```
+
+- `commit_id` Represents the commit ID of a repository tokenized using FinerGit.
+- `original_commit_id`, Represents the original repository commit ID (SHA1 hash value).
+- `commit_date`, The full date and time of the commit in standardized UTC format.
+  
+This table stores the mapping between the commit IDs of the original repository and the tokenized repository.
