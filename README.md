@@ -142,6 +142,8 @@ mysql> select * from  mbassador_diff_lines limit 5;
 
 ### Table `mbassador_finergit_commits_hayashi`
 
+Using the same logic as Hayashi-sensei, the specific details of method renaming, method migration, and method parameter changes are inferred by detecting changes in file names after the repository has been tokenized by FinerGit.
+
 The schema of table `mbassador_finergit_commits_hayashi` is as follows.
 
 ```shell-session
