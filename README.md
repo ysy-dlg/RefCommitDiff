@@ -164,7 +164,7 @@ mysql> desc mbassador_finergit_commits_hayashi;
 
 - `id`, Auto-increment primary key.
 - `commit_id` Represents the commit ID of the tokenized repository, mbassador.
-- `commit_note`, Represents the original repository commit ID.
+- `original_commit_id`, Represents the original repository commit ID.
 - `file_similarity_score`, Represents the similarity score assigned by Git when it detects a file rename or movement, indicating the percentage of similarity between the original file and the new file.
 - `change_type`, A high-level label that categorizes the type of change detected in the file.
 - `change_type_info`, A detailed description of the detected change.
