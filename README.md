@@ -213,14 +213,7 @@ mysql> desc repository;
 
 
 ## Patterns of each refactoring type in commits
-### From hayashi-sensei
-- **Rename Method**: A method is renamed.  
-- **Change Parameter**: Method parameters are changed.  
-- **Rename Method+**: Both the method name and its parameters are changed.  
-- **Move Method**: A method is moved to another class.  
-- **Move Method+**: A method is moved to another class with changes to its name or parameters.  
-- **Move and Rename Method**: A method is moved to another class and renamed.  
-- **Move and Rename Method+**: A method is moved to another class, renamed, and its parameters are changed.  
+  
 
 
 
