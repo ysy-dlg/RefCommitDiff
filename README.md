@@ -221,6 +221,5 @@ systematically summarize the behavioral patterns of each refactoring type, progr
 Based on the summarized patterns, design rules or automated tools to detect refactoring instances.
 
 
-
-
+## RefactoringMiner-supported refactoring types
 
