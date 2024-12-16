@@ -2,8 +2,11 @@
 Language-agnostic Refactoring Detection
 
 ## all_commit_diff_db
-Testing Phase Version
+Testing Phase Version.
+
 Considering the data volume in the later stages, I chose MySQL instead of SQLite.
+
+Currently, I am using `git log --all`. In the future, I may consider adding options to exclude merge commits and other entries.
 
 ### Tables in all_commit_diff_db
 
@@ -24,6 +27,8 @@ mysql> show tables;
 ```
 
 ### Table `mbassador_all_original_commits`
+
+
 The schema of table `mbassador_all_original_commits` is as follows.
 
 ```shell-session
@@ -53,3 +58,5 @@ The schema of table `mbassador_all_original_commits` is as follows.
 - `commit_message_body`, Detailed commit message describing the changes in the commit.
 - `refactor_keyword_id`, Refactoring keyword ID, linked to the refactor_keywords table
 - `commit_date`, The full date and time of the commit in standardized UTC format.
+
+**`is_code_file_modified`** can help filter out commits that do not contain code file (e.g..java) changes.
