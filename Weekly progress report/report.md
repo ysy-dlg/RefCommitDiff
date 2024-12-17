@@ -26,8 +26,9 @@
     
 ### Doing
 - Summarize the patterns of refactoring types.
-- 
+  
 ### To do
-- The step **Combine manual analysis and GPT-4.0 to determine potential refactoring** did not yield satisfactory results.
-  - Attempting to summarize keywords, but the results do not seem satisfactory.
-  - Considering creating prompt engineering to let GPT-4.0 handle the task of determining potential refactoring types.
+- Migrate the database to SQLite and optimize the database structure.  
+- Complete the summarization of the patterns of refactoring types.  
+- Complete the full workflow using "mabassador" as the experimental subject.
+- Consider creating prompt engineering to let GPT-4.0 handle the task of identifying potential refactoring types in the original repository commits.
