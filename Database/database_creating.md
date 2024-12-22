@@ -42,3 +42,4 @@ The schema of table `commit_diff_lines_finergit` is as follows.
 - **`is_code_file_modified`** can help filter out commits that do not contain code file (e.g..java) changes.
 - To set the primary key, an auto-increment ID was added.
 
+**Displaying Data Stored in the Table**
