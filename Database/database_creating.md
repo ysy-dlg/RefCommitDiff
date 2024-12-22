@@ -43,3 +43,6 @@ The schema of table `commit_diff_lines_finergit` is as follows.
 - To set the primary key, an auto-increment ID was added.
 
 **Displaying Data Stored in the Table**
+```shell-session
+ 
+```
