@@ -18,7 +18,8 @@ commits_finergit_hayashi      repository
 ```
 
 
-### Table `commit_diff_lines_finergit`
+<details>
+<summary>Table <code>commit_diff_lines_finergit</code></summary>
 
 The schema of table `commit_diff_lines_finergit` is as follows.
 
@@ -79,3 +80,4 @@ id  commit_id                                 repository_id  file_name          
 10  e2349134a2bc55891a5220c52ff7f3a0bbe1a378  183            PublicationError#public_PublicationError(Throwable,String,Me  src/main/java/net/engio/mbassy/bus/error  2016-10-02 21:01:46  2        @@ -26,8 +26,8 @@ Object        TYPENAME  6        +            VARIABLENAME  publication                                                 
                                                              thod,Object,IMessagePublication).mjava                                                                                                                                                                                                                                                                 
 ```
+</details>
