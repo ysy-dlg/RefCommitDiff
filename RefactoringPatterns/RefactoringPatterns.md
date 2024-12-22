@@ -280,6 +280,13 @@
 
 # Refactoring Patterns In Git commit History
 
+
+systematically summarize the behavioral patterns of each refactoring type, progressing step by step from the:
+
+`original commit level → file level → method level → line level (hunk level)`
+
+Based on the summarized patterns, design rules or automated tools to detect refactoring instances.
+
 <details>
 <summary>Token Types</summary> Token Types
 	
