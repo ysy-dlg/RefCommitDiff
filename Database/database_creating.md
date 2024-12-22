@@ -149,6 +149,13 @@ id  commit_id                                 repository_id  file_name          
 <summary>Table <code>finergit_original_mapping</code></summary>
 
 - The schema of table `finergit_original_mapping` is as follows.
+  
+| Field Name         | Data Type      | Nullable | Primary/Foreign Key | Description                |
+|--------------------|----------------|----------|----------------------|----------------------------|
+| commit_id          | VARCHAR(40)    | No       | Primary Key          | FinerGit commit ID         |
+| original_commit_id | VARCHAR(7)     | No       |                      | Original Commit ID         |
+| repository_id      | INTEGER        | No       |                      | Repository ID              |
+| commit_date        | TIMESTAMP      | Yes      |                      | UTC time, without timezone information  |
 
 
 
@@ -203,6 +210,11 @@ id  commit_id                                 repository_id  file_name          
 
 - The schema of table `refactor_keywords` is as follows.
 
+| Field Name      | Data Type      | Nullable | Primary/Foreign Key | Description                                  |
+|------------------|----------------|----------|----------------------|----------------------------------------------|
+| id               | INTEGER        | No       | Auto-increment Primary Key | Keyword group ID                           |
+| base_keyword     | VARCHAR(50)    | No       |                      | Base keyword (e.g., extend)                |
+| variant_keyword  | VARCHAR(50)    | No       |                      | Variant keyword (e.g., extend, extended)   |
 
 
 
@@ -217,6 +229,17 @@ id  commit_id                                 repository_id  file_name          
 <summary>Table <code>commits_finergit_hayashi</code></summary>
 
 - The schema of table `commits_finergit_hayashi` is as follows.
+
+| Field Name             | Data Type      | Nullable | Primary/Foreign Key | Description                              |
+|-------------------------|----------------|----------|----------------------|------------------------------------------|
+| id                      | INTEGER        | No       | Primary Key          | Auto-increment                          |
+| commit_id               | VARCHAR(40)    | No       |                      | FinerGit commit ID                      |
+| repository_id           | INTEGER        | No       |                      | Repository ID                           |
+| file_similarity_score   | INT            | No       |                      | Rxx                                  |
+| change_type             | VARCHAR(30)    | No       |                      | Rename Method, Change Parameter, Rename Method+, Move Method, Move Method+, Move and Rename Method, Move and Rename Method+ |
+| change_type_info        | TEXT           | No       |                      |                                          |
+| old_file_path           | VARCHAR(255)   | No       |                      |                                          |
+| new_file_path           | VARCHAR(255)   | No       |                      |                                          |
 
 
 
@@ -233,6 +256,12 @@ Displaying Data Stored in the Table
 
 - The schema of table `repository` is as follows.
 
+| Field Name       | Data Type      | Nullable | Primary/Foreign Key | Description                                                   |
+|-------------------|----------------|----------|----------------------|---------------------------------------------------------------|
+| id                | INTEGER        | No       | Primary Key          | Unique identifier for the repository, auto-increment primary key |
+| repository_url    | TEXT           | No       |                      | Repository URL (e.g., GitHub, GitLab, etc.)                 |
+| repository_name   | VARCHAR(255)   | Yes      |                      | Name of the repository, used to identify or describe it      |
+| language          | VARCHAR(50)    | No       |                      | Primary programming language of the repository (e.g., Java, Python) |
 
 
 
