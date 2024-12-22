@@ -1,8 +1,6 @@
 # commit_diff_db
 Testing Phase Version.
 
-Considering the data volume in the later stages, I chose MySQL instead of SQLite.
-
 Currently, I am using `git log --all`. In the future, I may consider adding options to exclude merge commits and other entries.
 
 ## Tables in commit_diff_db
