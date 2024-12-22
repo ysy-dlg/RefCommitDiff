@@ -7,27 +7,22 @@ Currently, I am using `git log --all`. In the future, I may consider adding opti
 
 ## Tables in commit_diff_db
 
-There are six tables `repository`, `refactor_keywords`, `mbassador_original_commits`,`mbassador_finergit_original_mapping`,`mbassador_finergit_commits_hayashi`, and `mbassador_diff_lines` in commit_diff_db.
+There are 8 tables `commit_diff_lines_finergit`, `commits_original`, `commit_file_changes_finergit`,`finergit_original_mapping`,`commit_file_changes_original` ,`refactor_keywords`,`commits_finergit_hayashi`, 
+ and `repository` in commit_diff_db.
 ```shell-session
-mysql> show tables;
-+-------------------------------------+
-| Tables_in_commit_diff_db            |
-+-------------------------------------+
-| mbassador_diff_lines                |
-| mbassador_finergit_commits_hayashi  |
-| mbassador_finergit_original_mapping |
-| mbassador_original_commits          |
-| refactor_keywords                   |
-| repository                          |
-+-------------------------------------+
+sqlite> .tables
+commit_diff_lines_finergit    commits_original            
+commit_file_changes_finergit  finergit_original_mapping   
+commit_file_changes_original  refactor_keywords           
+commits_finergit_hayashi      repository  
 ```
 
-### Table `mbassador_original_commits`
+下面需要修改
+### Table `commit_diff_lines_finergit`
 
-The schema of table `mbassador_original_commits` is as follows.
+The schema of table `commit_diff_lines_finergit` is as follows.
 
-```shell-session
-mysql> desc mbassador_original_commits;
+```
 +------------------------+--------------+------+-----+---------+-------+
 | Field                  | Type         | Null | Key | Default | Extra |
 +------------------------+--------------+------+-----+---------+-------+
