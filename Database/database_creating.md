@@ -81,3 +81,113 @@ id  commit_id                                 repository_id  file_name          
                                                              thod,Object,IMessagePublication).mjava                                                                                                                                                                                                                                                                 
 ```
 </details>
+
+
+
+<details>
+<summary>Table <code>commits_original</code></summary>
+
+The schema of table `commits_original` is as follows.
+
+
+
+
+
+**Displaying Data Stored in the Table**
+```shell-session
+                                                                                                                                                                                                                                                             
+```
+</details>
+
+<details>
+<summary>Table <code>commit_file_changes_finergit</code></summary>
+
+The schema of table `commit_file_changes_finergit` is as follows.
+
+
+
+
+
+**Displaying Data Stored in the Table**
+```shell-session
+                                                                                                                                                                                                                                                             
+```
+</details>
+
+<details>
+<summary>Table <code>finergit_original_mapping</code></summary>
+
+The schema of table `finergit_original_mapping` is as follows.
+
+
+
+
+
+**Displaying Data Stored in the Table**
+```shell-session
+                                                                                                                                                                                                                                                             
+```
+</details>
+
+<details>
+<summary>Table <code>commit_file_changes_original</code></summary>
+
+The schema of table `commit_file_changes_original` is as follows.
+
+
+
+
+
+**Displaying Data Stored in the Table**
+```shell-session
+                                                                                                                                                                                                                                                             
+```
+</details>
+
+<details>
+<summary>Table <code>refactor_keywords</code></summary>
+
+The schema of table `refactor_keywords` is as follows.
+
+
+
+
+
+**Displaying Data Stored in the Table**
+```shell-session
+                                                                                                                                                                                                                                                             
+```
+</details>
+
+<details>
+<summary>Table <code>commits_finergit_hayashi</code></summary>
+
+The schema of table `commits_finergit_hayashi` is as follows.
+
+
+
+
+
+**Displaying Data Stored in the Table**
+```shell-session
+                                                                                                                                                                                                                                                             
+```
+</details>
+
+<details>
+<summary>Table <code>repository</code></summary>
+
+The schema of table `repository` is as follows.
+
+
+
+
+
+**Displaying Data Stored in the Table**
+```shell-session
+                                                                                                                                                                                                                                                             
+```
+</details>
+
+
+
