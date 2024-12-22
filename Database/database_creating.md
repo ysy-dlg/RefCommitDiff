@@ -34,7 +34,7 @@ commits_finergit_hayashi      repository
 | hunk_header    | TEXT           | No       |                      | Header information of the `hunk`                             |
 | line_id        | INT            | No       |                      | Unique identifier for the line, starting from 0              |
 | change_type    | ENUM('+', '-') | No       |                      | Change type (`+` for addition, `-` for deletion)             |
-| token_type     | VARCHAR(50)    | Yes      |                      | Token type: For comment lines, non-terminal lines have a null token type, while terminal lines are `JAVADOCCOMMENT`  |
+| token_type     | VARCHAR(50)    | Yes      |                      | Token type: For comment lines, non-terminal lines have a null token type, while terminal lines are `JAVADOCCOMMENT` or `BLOCKCOMMENT` |
 | token_value    | TEXT           | No       |                      | Token value                                                  |
 
 
