@@ -1,7 +1,7 @@
 # commit_diff_db
 Testing Phase Version.
 
-Currently, I am using `git log --all`. In the future, I may consider adding options to exclude merge commits and other entries.
+Currently, except for the `commits_finergit_hayashi` (git log --branches --tags --no-merges -M50), all other tables use `git log --all` to extract commit information. In the future, I may consider adding options to exclude merge commits and other entries.
 
 ## Tables in commit_diff_db
 
