@@ -418,7 +418,7 @@ id  repository_url                                              repository_name 
 
 # Token Types Supported by FinerGit
 <details>
-<summary>Token Types</summary> Token Types
+<summary>Token Types</summary>
 	
 	ABSTRACT
 	AND
