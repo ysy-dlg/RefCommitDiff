@@ -229,6 +229,7 @@ id  commit_id                                 repository_id  file_name          
 <summary>Table <code>commits_finergit_hayashi</code></summary>
 
 - The schema of table `commits_finergit_hayashi` is as follows.
+  - To set the primary key, an auto-increment ID was added.
 
 | Field Name             | Data Type      | Nullable | Primary/Foreign Key | Description                              |
 |-------------------------|----------------|----------|----------------------|------------------------------------------|
