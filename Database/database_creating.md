@@ -164,6 +164,7 @@ id  commit_id                                 repository_id  file_name          
 <summary>Table <code>commit_file_changes_original</code></summary>
 
 - The schema of table `commit_file_changes_original` is as follows.
+  - To set the primary key, an auto-increment ID was added.
 
 | Field Name     | Data Type      | Nullable | Primary/Foreign Key | Description                                                               |
 |----------------|----------------|----------|----------------------|---------------------------------------------------------------------------|
@@ -175,6 +176,18 @@ id  commit_id                                 repository_id  file_name          
 | source_file    | VARCHAR(255)   | No       |                      | File name part of `source_file_path`.                                    |
 | target_dir     | VARCHAR(255)   | No       |                      | Path part of `target_file_path`, excluding the file name (for R and C statuses) |
 | target_file    | VARCHAR(255)   | No       |                      | File name part of `target_file_path`                                    |
+
+- File Status
+
+| File Status | source_dir                  | source_file        | target_dir                     | target_file           |
+|-------------|-----------------------------|--------------------|--------------------------------|-----------------------|
+| A           | Empty                       | Empty              | Directory part of the new file path | File name part of the new file |
+| M           | Directory part of the original file path | File name part of the original file | Empty                | Empty                |
+| D           | Directory part of the deleted file path | File name part of the deleted file | Empty                | Empty                |
+| Rxx         | Directory part of the original file path | File name part of the original file | Directory part of the renamed file path | File name part of the renamed file |
+| Cxx         | Directory part of the original file path | File name part of the original file | Directory part of the copied file path | File name part of the copied file |
+| T           | Directory part of the file path | File name part of the file | Empty                | Empty                |
+| U           | Directory part of the conflicting file path | File name part of the conflicting file | Empty                | Empty                |
 
 
 
