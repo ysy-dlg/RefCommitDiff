@@ -1,14 +1,11 @@
-# RefCommitDiff
-Language-agnostic Refactoring Detection
-
-## commit_diff_db
+# commit_diff_db
 Testing Phase Version.
 
 Considering the data volume in the later stages, I chose MySQL instead of SQLite.
 
 Currently, I am using `git log --all`. In the future, I may consider adding options to exclude merge commits and other entries.
 
-### Tables in commit_diff_db
+## Tables in commit_diff_db
 
 There are six tables `repository`, `refactor_keywords`, `mbassador_original_commits`,`mbassador_finergit_original_mapping`,`mbassador_finergit_commits_hayashi`, and `mbassador_diff_lines` in commit_diff_db.
 ```shell-session
