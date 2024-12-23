@@ -1,5 +1,5 @@
 # Progress Report
-## 12/24
+## 2024/12/24
 
 ### Done
 - Time spent on this project this week (30h)
@@ -16,7 +16,7 @@
 - Complete the full workflow using "mabassador" as the experimental subject.
 - Consider creating prompt engineering to let GPT-4.0 handle the task of identifying potential refactoring types in the original repository commits.
 
-## 12/16
+## 2024/12/16
 
 ### Done
 - Time spent on this project this week (25h)
