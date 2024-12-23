@@ -10,7 +10,7 @@
 
 1. Extract Method  
 2. Inline Method  
-3. Rename Method  
+3. [Rename Method](./RefactoringPatterns.md) 
 4. Move Method  
 5. Move Attribute  
 6. Pull Up Method  
