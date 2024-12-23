@@ -911,7 +911,54 @@ Based on the summarized patterns, design rules or automated tools to detect refa
 
 </details>
 
+<details>
+<summary>6. Package-Related</summary>
 
+### 6.1 Renaming and Moving
+- Rename Package
+- Move Package
+- Move and Rename Class
+
+### 6.2 Splitting and Merging
+- Split Package
+- Merge Package
+
+</details>
+
+<details>
+<summary>7. Logic Refactoring</summary>
+
+### 7.1 Conditional Expressions
+- Split Conditional
+- Invert Condition
+- Merge Conditional
+- Replace Conditional With Ternary
+
+### 7.2 Loop Optimization
+- Replace Loop with Pipeline
+- Replace Pipeline with Loop
+
+</details>
+
+<details>
+<summary>8. Testing-Related</summary>
+
+- Parameterize Test (JUnit 5 @ParameterizedTest with @ValueSource)
+- Assert Throws
+
+</details>
+
+<details>
+<summary>9. Miscellaneous Changes</summary>
+
+### 9.1 Exception Handling and Resources
+- Merge Catch
+- Try With Resources
+
+### 9.2 Generics and Modifiers
+- Replace Generic With Diamond
+
+</details>
 
 
 --- 
