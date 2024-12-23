@@ -1,4 +1,20 @@
 # Progress Report
+## 12/24
+
+### Done
+- Time spent on this project this week (30h)
+- Migrate the database to SQLite and optimize the database structure.
+  -  Added a file-level change log table for the original repository and the tokenized repository
+  -  Fixed various issues encountered when extracting diff code lines from the tokenized repository, such as the failure to extract token values due to special characters in strings.
+
+    
+### Doing
+- Summarize the patterns of refactoring types.
+  
+### To do 
+- Complete the summarization of the patterns of refactoring types.  
+- Complete the full workflow using "mabassador" as the experimental subject.
+- Consider creating prompt engineering to let GPT-4.0 handle the task of identifying potential refactoring types in the original repository commits.
 
 ## 12/16
 
