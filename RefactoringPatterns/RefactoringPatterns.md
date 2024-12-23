@@ -10,7 +10,7 @@
 
 1. Extract Method  
 2. Inline Method  
-3. [Rename Method](./RefactoringPatterns.md) 
+3. Rename Method 
 4. Move Method  
 5. Move Attribute  
 6. Pull Up Method  
@@ -763,7 +763,7 @@ Based on the summarized patterns, design rules or automated tools to detect refa
 
 ### 1.2 Moving and Renaming
 - Move Method
-- Rename Method
+- [Rename Method](./MethodRelated/RenameMethod.md)
 - Move and Rename Method
 
 ### 1.3 Hierarchical Adjustments
