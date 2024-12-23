@@ -5,7 +5,7 @@ Currently, except for the `commits_finergit_hayashi` (`git log --branches --tags
 
 ## Tables in commit_diff_db
 
-There are 8 tables `commit_diff_lines_finergit`, `commits_original`, `commit_file_changes_finergit`,`finergit_original_mapping`,`commit_file_changes_original` ,`refactor_keywords`,`commits_finergit_hayashi`, 
+There are eight tables `commit_diff_lines_finergit`, `commits_original`, `commit_file_changes_finergit`,`finergit_original_mapping`,`commit_file_changes_original` ,`refactor_keywords`,`commits_finergit_hayashi`, 
  and `repository` in commit_diff_db.
 ```shell-session
 sqlite> .tables
