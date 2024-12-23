@@ -46,9 +46,6 @@ commits_finergit_hayashi      repository
 sqlite> .mode column
 sqlite> .headers on
 sqlite> select * from commit_diff_lines_finergit limit 10;
-sqlite> .mode column
-sqlite> .headers on
-sqlite> select * from commit_diff_lines_finergit limit 10;
 id  commit_id                                 repository_id  file_name                                                     file_path                                 commit_date          hunk_id  hunk_header                               line_id  change_type  token_type    token_value                                                 
 --  ----------------------------------------  -------------  ------------------------------------------------------------  ----------------------------------------  -------------------  -------  ----------------------------------------  -------  -----------  ------------  ------------------------------------------------------------
 1   e2349134a2bc55891a5220c52ff7f3a0bbe1a378  183            PublicationError#public_PublicationError(Throwable,String,Me  src/main/java/net/engio/mbassy/bus/error  2016-10-02 21:01:46  0        @@ -1,10 +1,10 @@                         3        -                          * @param message         The message to                     
@@ -79,9 +76,9 @@ id  commit_id                                 repository_id  file_name          
                                                              thod,Object,IMessagePublication).mjava                                                                                                                                                                                                                                          
 
 10  e2349134a2bc55891a5220c52ff7f3a0bbe1a378  183            PublicationError#public_PublicationError(Throwable,String,Me  src/main/java/net/engio/mbassy/bus/error  2016-10-02 21:01:46  2        @@ -26,8 +26,8 @@ Object        TYPENAME  6        +            VARIABLENAME  publication                                                 
-                                                             thod,Object,IMessagePublication).mjava                                                                                                                                                                                                                                          
-                                                                                                                                                                                                                                                           
+                                                             thod,Object,IMessagePublication).mjava                                                                                                                                                                                                                                                                                          
 ```
+
 </details>
 
 
