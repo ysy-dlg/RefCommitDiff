@@ -418,7 +418,10 @@ id  repository_url                                              repository_name 
 </details>
 
 
-# Token Types Supported by FinerGit
+# Token Types Supported by [FinerGit](https://github.com/kusumotolab/FinerGit)
+
+
+
 <details>
 <summary>Token Types</summary>
 	
