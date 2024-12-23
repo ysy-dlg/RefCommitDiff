@@ -762,9 +762,9 @@ Based on the summarized patterns, design rules or automated tools to detect refa
 - Merge Method
 
 ### 1.2 Moving and Renaming
-- [Move Method](./MethodRelated/MoveMethod.md)
-- [Rename Method](./MethodRelated/RenameMethod.md)
-- [Move and Rename Method](./MethodRelated/MoveAndRenameMethod.md)
+- [Move Method](./Method_Related/MoveMethod.md)
+- [Rename Method](./Method_Related/RenameMethod.md)
+- [Move and Rename Method](./Method_Related/MoveAndRenameMethod.md)
 
 ### 1.3 Hierarchical Adjustments
 - Pull Up Method
