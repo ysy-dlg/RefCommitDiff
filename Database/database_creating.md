@@ -3,6 +3,12 @@ Testing Phase Version.
 
 Currently, except for the `commits_finergit_hayashi` (`git log --branches --tags --no-merges -M50`), all other tables use `git log --all` to extract commit information. In the future, I may consider adding options to exclude merge commits and other entries.
 
+The dataset can be downloaded from the following URL:
+
+https://www.dropbox.com/scl/fi/u4ca2zrsjyks1ph1dicqr/commit_diff.db?rlkey=748zcnjkwekh5gd541qvhp95j&st=rgpkfpn4&dl=0
+
+Due to its size exceeding 25MB, it is stored on Dropbox rather than GitHub.
+
 ## Tables in commit_diff_db
 
 There are eight tables `commit_diff_lines_finergit`, `commits_original`, `commit_file_changes_finergit`,`finergit_original_mapping`,`commit_file_changes_original` ,`refactor_keywords`,`commits_finergit_hayashi`, 
