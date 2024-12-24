@@ -10,6 +10,7 @@
     
 ### Doing
 - Summarize the patterns of refactoring types.
+  - With the database in place, I hope to complete the summary of all patterns of refactoring types.
   
 ### To do 
 - Complete the summarization of the patterns of refactoring types.  
