@@ -4,7 +4,7 @@
 
 1. **Method Declaration Changes**: The method name within the same file is modified.  
 2. **Invocation Relationship Changes**: The name of the method being invoked is updated.  
-3. **Filename Changes**: Since the `.mjava` filename includes the method name, a renaming may also result in a filename change.
+3. **Filename Changes**: Since the `.mjava` filename includes the method name.
 
 To detect these refactorings, the following data is essential:
 
