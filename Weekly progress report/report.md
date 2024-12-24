@@ -5,6 +5,7 @@
 - Time spent on this project this week (30h)
 - Migrate the [database](/Database/database_creating.md) to SQLite and optimize the database structure.
   -  Except for the repository table, the others only store data about the Mbassador repository.
+  -  After completing the pattern design for all detectable refactoring types using Mbassador, all required repository data will be added to the database.
   -  Added a file-level change log table for the original repository and the tokenized repository
   -  Fixed various issues encountered when extracting diff code lines from the tokenized repository, such as the failure to extract token values due to special characters in strings.
 
