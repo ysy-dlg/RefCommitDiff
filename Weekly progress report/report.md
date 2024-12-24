@@ -14,8 +14,6 @@
   
 ### To do 
 - Complete the summarization of the patterns of refactoring types.  
-- Complete the full workflow using "mabassador" as the experimental subject.
-- Consider creating prompt engineering to let GPT-4.0 handle the task of identifying potential refactoring types in the original repository commits.
 
 ## 2024/12/16
 
