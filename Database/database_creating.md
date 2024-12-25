@@ -431,7 +431,7 @@ id  repository_url                                              repository_name 
 </details>
 
 <details>
-<summary>Table <code>rename_method_name</code></summary>
+<summary>Table <code>rename_method</code></summary>
 
 - The schema of table `refactor_keywords` is as follows.
 
