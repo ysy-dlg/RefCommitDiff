@@ -435,17 +435,52 @@ id  repository_url                                              repository_name 
 
 - The schema of table `rename_method` is as follows.
 
-| Field Name      | Data Type      | Nullable | Primary/Foreign Key | Description                                  |
-|------------------|----------------|----------|----------------------|----------------------------------------------|
-| id               | INTEGER        | No       | Auto-increment Primary Key | Keyword group ID                           |
-| base_keyword     | VARCHAR(50)    | No       |                      | Base keyword (e.g., extend)                |
-| variant_keyword  | VARCHAR(50)    | No       |                      | Variant keyword (e.g., extend, extended)   |
-
+| Field Name     | Data Type      | Nullable | Primary/Foreign Key | Description                                                               |
+|----------------|----------------|----------|----------------------|---------------------------------------------------------------------------|
+| id             | INTEGER        | No       | Primary Key          | Auto-increment                                                           |
+| commit_id      | VARCHAR(40)    | No       |                      | Finergit Commit ID                                   |
+| repository_id  | INTEGER        | No       |                      | Repository ID                                                           |
+| file_status    | VARCHAR(10)    | No       |                      | File status: A (added), M (modified), D (deleted), Rxx (renamed), Cxx (copied), etc |
+| source_dir     | VARCHAR(255)   | No       |                      | Path part of `source_file_path`, excluding the file name                |
+| source_file    | VARCHAR(255)   | No       |                      | File name part of `source_file_path`.                                    |
+| target_dir     | VARCHAR(255)   | No       |                      | Path part of `target_file_path`, excluding the file name (for R and C statuses) |
+| target_file    | VARCHAR(255)   | No       |                      | File name part of `target_file_path`                                    |
+| old_method_name     | VARCHAR(255)   | No       |                      |  |
+| new_method_name    | VARCHAR(255)   | No       |                      |                                    |
 
 
 
 - Displaying Data Stored in the Table
 ```shell-session
+sqlite> .mode column
+sqlite> .headers on
+sqlite> select * from rename_method limit 10;
+id  commit_id                                 repository_id  file_status  source_dir                                 source_file                                                   target_dir                                 target_file                                                   old_method_name             new_method_name                       
+--  ----------------------------------------  -------------  -----------  -----------------------------------------  ------------------------------------------------------------  -----------------------------------------  ------------------------------------------------------------  --------------------------  --------------------------------------
+1   e2349134a2bc55891a5220c52ff7f3a0bbe1a378  183            R051         src/main/java/net/engio/mbassy/bus         IMessagePublication#IMessagePublication_markScheduled().mjav  src/main/java/net/engio/mbassy/bus         IMessagePublication#PublicationError_getError().mjava         markScheduled               getError                              
+                                                                                                                     a                                                                                                                                                                                                                                        
+
+2   e2349134a2bc55891a5220c52ff7f3a0bbe1a378  183            R060         src/main/java/net/engio/mbassy/bus         IMessagePublication#void_markDelivered().mjava                src/main/java/net/engio/mbassy/bus         IMessagePublication#boolean_hasError().mjava                  markDelivered               hasError                              
+
+3   e2349134a2bc55891a5220c52ff7f3a0bbe1a378  183            R072         src/main/java/net/engio/mbassy/bus         MessagePublication#public_void_markDelivered().mjava          src/main/java/net/engio/mbassy/bus         MessagePublication#public_void_markDispatched().mjava         markDelivered               markDispatched                        
+
+4   e2349134a2bc55891a5220c52ff7f3a0bbe1a378  183            R080         src/main/java/net/engio/mbassy/dispatch    ReflectiveHandlerInvocation#protected_void_invokeHandler(Obj  src/main/java/net/engio/mbassy/dispatch    ReflectiveHandlerInvocation#public_void_invoke(Object,Object  invokeHandler               invoke                                
+                                                                                                                     ect,Object,Method).mjava                                                                                 ,MessagePublication).mjava                                                                                                      
+
+5   e2349134a2bc55891a5220c52ff7f3a0bbe1a378  183            R092         src/test/java/net/engio/mbassy             MethodDispatchTest#public_void_testDispatch1().mjava          src/test/java/net/engio/mbassy             MethodDispatchTest#public_void_testDispatchWithSequentialSub  testDispatch1               testDispatchWithSequentialSubscription
+                                                                                                                                                                                                                              scription().mjava                                                                                                               
+
+6   040ec1927bde4231d649fc44d97bf6033322c641  183            R055         src/main/java/net/engio/mbassy/bus         BusFactory#public_IMessageBus_AsynchronousSequentialFIFO().m  examples                                   ErrorHandling#public_void_main(String[]).mjava                AsynchronousSequentialFIFO  main                                  
+                                                                                                                     java                                                                                                                                                                                                                                     
+
+7   040ec1927bde4231d649fc44d97bf6033322c641  183            R064         src/main/java/net/engio/mbassy/bus/config  ConfigurationError#public_ConfigurationError_Missing(Class[#  src/main/java/net/engio/mbassy/bus/config  ConfigurationError#public_ConfigurationError_MissingFeature(  Missing                     MissingFeature                        
+                                                                                                                     -extends-Feature]).mjava                                                                                 Class[#-extends-Feature]).mjava                                                                                                 
+
+8   ad414df3509164b88344459f2e53f6b8d6378d34  183            R071         src/main/java/net/engio/mbassy/bus         IMessagePublication#boolean_isDeadEvent().mjava               src/main/java/net/engio/mbassy/bus         IMessagePublication#boolean_isDeadMessage().mjava             isDeadEvent                 isDeadMessage                         
+
+9   ad414df3509164b88344459f2e53f6b8d6378d34  183            R068         src/main/java/net/engio/mbassy/bus         IMessagePublication#boolean_isFilteredEvent().mjava           src/main/java/net/engio/mbassy/bus         IMessagePublication#boolean_isFilteredMessage().mjava         isFilteredEvent             isFilteredMessage                     
+
+10  ad414df3509164b88344459f2e53f6b8d6378d34  183            R092         src/main/java/net/engio/mbassy/bus         MessagePublication#public_boolean_isDeadEvent().mjava         src/main/java/net/engio/mbassy/bus         MessagePublication#public_boolean_isDeadMessage().mjava       isDeadEvent                 isDeadMessage                         
                                                                                                                                                                                                                                                              
 ```
 
