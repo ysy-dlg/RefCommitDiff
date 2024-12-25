@@ -488,7 +488,7 @@ id  commit_id                                 repository_id  file_status  source
 </details>
 
 <details>
-<summary>Table <code>rename_method</code></summary>
+<summary>Table <code>move_method</code></summary>
 
 - The schema of table `move_method` is as follows.
 
