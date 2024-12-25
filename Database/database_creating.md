@@ -21,6 +21,7 @@ commit_file_changes_original  refactor_keywords
 commits_finergit_hayashi      repository  
 ```
 
+### Tables for storing repository data
 
 <details>
 <summary>Table <code>commit_diff_lines_finergit</code></summary>
@@ -424,6 +425,39 @@ id  repository_url                                              repository_name 
 </details>
 
 
+### Table for storing detected refactoring information
+
+
+</details>
+
+<details>
+<summary>Table <code>rename_method_name</code></summary>
+
+- The schema of table `refactor_keywords` is as follows.
+
+| Field Name      | Data Type      | Nullable | Primary/Foreign Key | Description                                  |
+|------------------|----------------|----------|----------------------|----------------------------------------------|
+| id               | INTEGER        | No       | Auto-increment Primary Key | Keyword group ID                           |
+| base_keyword     | VARCHAR(50)    | No       |                      | Base keyword (e.g., extend)                |
+| variant_keyword  | VARCHAR(50)    | No       |                      | Variant keyword (e.g., extend, extended)   |
+
+
+
+
+- Displaying Data Stored in the Table
+```shell-session
+                                                                                                                                                                                                                                                             
+```
+
+
+
+
+
+
+
+
+
+---
 # Token Types Supported by [FinerGit](https://github.com/kusumotolab/FinerGit)
 
 
