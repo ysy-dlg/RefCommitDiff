@@ -433,7 +433,7 @@ id  repository_url                                              repository_name 
 <details>
 <summary>Table <code>rename_method</code></summary>
 
-- The schema of table `refactor_keywords` is as follows.
+- The schema of table `rename_method` is as follows.
 
 | Field Name      | Data Type      | Nullable | Primary/Foreign Key | Description                                  |
 |------------------|----------------|----------|----------------------|----------------------------------------------|
