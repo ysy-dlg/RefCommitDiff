@@ -485,7 +485,32 @@ id  commit_id                                 repository_id  file_status  source
 ```
 
 
+</details>
 
+<details>
+<summary>Table <code>rename_method</code></summary>
+
+- The schema of table `move_method` is as follows.
+
+| Field Name     | Data Type      | Nullable | Primary/Foreign Key | Description                                                               |
+|----------------|----------------|----------|----------------------|---------------------------------------------------------------------------|
+| id             | INTEGER        | No       | Primary Key          | Auto-increment                                                           |
+| commit_id      | VARCHAR(40)    | No       |                      | Finergit Commit ID                                   |
+| repository_id  | INTEGER        | No       |                      | Repository ID                                                           |
+| file_status    | VARCHAR(10)    | No       |                      | File status: A (added), M (modified), D (deleted), Rxx (renamed), Cxx (copied), etc |
+| source_dir     | VARCHAR(255)   | No       |                      | Path part of `source_file_path`, excluding the file name                |
+| source_file    | VARCHAR(255)   | No       |                      | File name part of `source_file_path`.                                    |
+| target_dir     | VARCHAR(255)   | No       |                      | Path part of `target_file_path`, excluding the file name (for R and C statuses) |
+| target_file    | VARCHAR(255)   | No       |                      | File name part of `target_file_path`                                    |
+| old_method_name     | VARCHAR(255)   | No       |                      |  |
+| new_method_name    | VARCHAR(255)   | No       |                      |                                    |
+
+
+
+- Displaying Data Stored in the Table
+```shell-session
+                                                                                                        
+```
 
 
 
