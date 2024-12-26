@@ -44,35 +44,18 @@ WHERE
 
 ### **Step 2: Comparing Method Name Changes in Filenames**
 
-#### **Possible Filename Formats**
+#### **Possible Filename Formats and Parsing Rules**
 
-1. **Complete Format**:  
-   ```
-   ClassName#AccessModifier_ReturnType_MethodName(ParameterList).mjava
-   ```
-2. **Without Access Modifier**:  
-   ```
-   ClassName#ReturnType_MethodName(ParameterList).mjava
-   ```
-3. **Without Parameter List**:  
-   ```
-   ClassName#AccessModifier_ReturnType_MethodName().mjava
-   ```
-4. **Only ReturnType and MethodName**:  
-   ```
-   ClassName#ReturnType_MethodName().mjava
-   ```
-
----
-
-### **Filename Parsing Rules**
-
-| Format                  | Example                                                   | Parsing Rule                              |
-|-------------------------|----------------------------------------------------------|------------------------------------------|
-| Complete Format         | `ClassName#AccessModifier_ReturnType_MethodName(ParameterList).mjava` | Extract the 3rd segment after `#`, split by `_` |
-| Without `AccessModifier`| `ClassName#ReturnType_MethodName(ParameterList).mjava`               | Extract the 2nd segment after `#`, split by `_` |
-| Without `ParameterList` | `ClassName#AccessModifier_ReturnType_MethodName().mjava`             | Extract the 2nd segment after `#`, split by `_` |
-| Only `ReturnType` and `MethodName` | `ClassName#ReturnType_MethodName().mjava`                        | Extract the 2nd segment after `#`, split by `_` |
+| Format Category                              | Example                                                      | Parsed Result                     |
+|---------------------------------------------|-------------------------------------------------------------|-----------------------------------|
+| **Complete Format**                          | `ClassName#AccessModifier_ReturnType_MethodName(ParameterList).mjava` | `ClassName = "ClassName"`<br>`MethodName = "MethodName"` |
+| **Missing `ParameterList`**                  | `ClassName#AccessModifier_ReturnType_MethodName().mjava`             | `ClassName = "ClassName"`<br>`MethodName = "MethodName"` |
+| **Missing `AccessModifier`**                 | `ClassName#ReturnType_MethodName(ParameterList).mjava`                | `ClassName = "ClassName"`<br>`MethodName = "MethodName"` |
+| **Missing `AccessModifier` and `ParameterList`** | `ClassName#ReturnType_MethodName().mjava`                           | `ClassName = "ClassName"`<br>`MethodName = "MethodName"` |
+| **Only `ClassName` and `MethodName` (with parameter list)** | `ClassName#MethodName(ParameterList).mjava`                         | `ClassName = "ClassName"`<br>`MethodName = "MethodName"` |
+| **Only `ClassName` and `MethodName` (no parameter list)** | `ClassName#MethodName().mjava`                                      | `ClassName = "ClassName"`<br>`MethodName = "MethodName"` |
+| **With `AccessModifier` and `MethodName` (with parameter list)** | `ClassName#AccessModifier_MethodName(ParameterList).mjava`           | `ClassName = "ClassName"`<br>`MethodName = "MethodName"` |
+| **With `AccessModifier` and `MethodName` (no parameter list)** | `ClassName#AccessModifier_MethodName().mjava`                        | `ClassName = "ClassName"`<br>`MethodName = "MethodName"` |
 
 ---
 
