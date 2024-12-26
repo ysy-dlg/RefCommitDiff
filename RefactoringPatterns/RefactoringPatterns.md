@@ -297,7 +297,7 @@
 
 
 
-# Refactoring Patterns by hayashi
+# Refactoring Patterns by hayashi-sensei
 
 The code contains logic for identifying 7 types of method changes by comparing old and new `.mjava` filenames, which follow the format: `ClassName#MethodName(ParameterList).mjava`.
 
