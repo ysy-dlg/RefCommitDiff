@@ -502,8 +502,8 @@ id   commit_id                                 repository_id  file_status  sourc
 | source_file    | VARCHAR(255)   | No       |                      | File name part of `source_file_path`.                                    |
 | target_dir     | VARCHAR(255)   | No       |                      | Path part of `target_file_path`, excluding the file name (for R and C statuses) |
 | target_file    | VARCHAR(255)   | No       |                      | File name part of `target_file_path`                                    |
-| old_method_name     | VARCHAR(255)   | No       |                      |  |
-| new_method_name    | VARCHAR(255)   | No       |                      |                                    |
+| old_class_name     | VARCHAR(255)   | No       |                      |  |
+| new_class_name    | VARCHAR(255)   | No       |                      |                                    |
 
 
 
