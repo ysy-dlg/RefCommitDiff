@@ -1,4 +1,19 @@
 # Progress Report
+
+## 2025/1/1
+
+### Done
+- Time spent on this project this week (10h)
+- Summarize the [patterns](/RefactoringPatterns/RefactoringPatterns.md) of refactoring types.
+
+    
+### Doing
+- Summarize the [patterns](/RefactoringPatterns/RefactoringPatterns.md) of refactoring types.
+ 
+  
+### To do 
+- Complete the summarization of the patterns of refactoring types.  
+
 ## 2024/12/23
 
 ### Done
