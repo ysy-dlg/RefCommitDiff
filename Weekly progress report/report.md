@@ -1,4 +1,28 @@
 # Progress Report
+## 2025/1/6
+
+### Done
+- Time spent on this project this week (3h)
+- Identify the hunks of refactoring commits (from hayashi-sensei) and try to classify the hunks by simple metrics
+  1. Size of the hunk
+  2. Number of tokens added and removed
+
+    
+### Doing
+- Making a histogram of these hunks information
+  
+### To do 
+1. Statistics of Files and Hunks in Refactoring Commits 
+   - Number of modified files  
+   - Number of hunks  
+   - Average and median size of hunks (+ lines and - lines)  
+
+2. Classification of Hunks  
+   - Categorize hunks by operation type, such as "replacing an identifier," "replacing code," "removing code," etc.  
+
+3. Classification of File Modification Operations 
+   - Classify file modifications into operations such as file creation, file deletion, file renaming, or file modification, and identify refactoring types based on the hunks they contain.  
+
 
 ## 2024/12/30
 
