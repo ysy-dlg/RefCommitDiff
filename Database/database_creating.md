@@ -33,8 +33,8 @@ commit_hunks_finergit         repository
 | id               | INTEGER             | No       | Primary Key          | Auto-incremented unique identifier                            |
 | commit_id        | VARCHAR(40)         | No       |                      | FinerGit commit ID                                            |
 | repository_name  | VARCHAR(255)        | No       |                      | Repository name                                               |
-| old_filename     | VARCHAR(255)        | No       |                      | Old file name including path                                  |
-| new_filename     | VARCHAR(255)        | No       |                      | New file name including path                                  |
+| old_filename     | VARCHAR(255)        | Yes       |                      | Old file name including path                                  |
+| new_filename     | VARCHAR(255)        | Yes       |                      | New file name including path                                  |
 | hunk_id          | INTEGER             | No       |                      | Unique identifier for the hunk, starting from 0              |
 | hunk_header      | TEXT                | No       |                      | Header information of the hunk, describing the context or code location |
 | hunk_size_lines  | INTEGER             | No       |                      | Total number of lines in the hunk                             |
@@ -60,7 +60,7 @@ commit_hunks_finergit         repository
 | Field Name              | Data Type      | Nullable | Primary/Foreign Key | Description                                                       |
 |-------------------------|----------------|----------|----------------------|-------------------------------------------------------------------|
 | commit_id               | VARCHAR(40)    | No       | Primary Key          | Original Commit ID                            |
-| repository_name   | VARCHAR(255)   | No      |                      | Name of the repository, used to identify or describe it      |
+| repository_name         | VARCHAR(255)   | No      |                      | Name of the repository, used to identify or describe it      |
 | commit_message_subject  | TEXT           | Yes      |                      | Commit message subject                                           |
 | is_file_modified        | TINYINT(1)     | No       |                      | With/Without File Modification                                  |
 | is_code_file_modified   | TINYINT(1)     | No       |                      | With/Without Code File Modification                            |
@@ -81,8 +81,8 @@ commit_hunks_finergit         repository
 | commit_id        | VARCHAR(40)     | No       |                      | Finergit commit ID (SHA1 hash value)                         |
 | repository_name  | VARCHAR(255)    | No       |                      | Repository name                                               |
 | file_status      | VARCHAR(10)     | No       |                      | File status: A (Added), M (Modified), D (Deleted), Rxx (Renamed), Cxx (Copied), etc. |
-| old_filename     | VARCHAR(255)    | No       |                      | Old file name including path                                  |
-| new_filename     | VARCHAR(255)    | No       |                      | New file name including path                                  |
+| old_filename     | VARCHAR(255)    | Yes       |                      | Old file name including path                                  |
+| new_filename     | VARCHAR(255)    | Yes       |                      | New file name including path                                  |
 
 </details>
 
@@ -115,8 +115,8 @@ commit_hunks_finergit         repository
 | commit_id        | VARCHAR(40)     | No       |                      | Original commit ID (SHA1 hash value)                         |
 | repository_name  | VARCHAR(255)    | No       |                      | Repository name                                               |
 | file_status      | VARCHAR(10)     | No       |                      | File status: A (Added), M (Modified), D (Deleted), Rxx (Renamed), Cxx (Copied), etc. |
-| old_filename     | VARCHAR(255)    | No       |                      | Old file name including path                                  |
-| new_filename     | VARCHAR(255)    | No       |                      | New file name including path                                  |
+| old_filename     | VARCHAR(255)    | Yes       |                      | Old file name including path                                  |
+| new_filename     | VARCHAR(255)    | Yes       |                      | New file name including path                                  |
 
 
 | File Status | old_filename               | new_filename              |
