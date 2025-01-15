@@ -39,7 +39,7 @@ commit_hunks_finergit         repository
 | hunk_header      | TEXT                | No       |                      | Header information of the hunk, describing the context or code location |
 | hunk_size_lines  | INTEGER             | No       |                      | Total number of lines in the hunk                             |
 | line_id          | INTEGER                 | No       |                      | Unique identifier for the line, starting from 0              |
-| change_type      | ENUM('+', '-')      | No       |                      | Type of change (`+` for addition, `-` for deletion)           |
+| token_change_type      | ENUM('+', '-')      | No       |                      | Type of change (`+` for addition, `-` for deletion)           |
 | token_type       | VARCHAR(50)         | Yes      |                      | Type of token; for comment lines, it may be empty or `JAVADOCCOMMENT` |
 | token_value      | TEXT                | No       |                      | Value of the token                                            |
 
