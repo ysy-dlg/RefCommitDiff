@@ -97,7 +97,7 @@ commit_hunks_finergit         repository
 | commit_id          | VARCHAR(40)    | No       | Primary Key          | FinerGit commit ID         |
 | original_commit_id | VARCHAR(7)     | No       |                      | Original Commit ID         |
 | repository_name  | VARCHAR(255)    | No       |                      | Repository name                                               |
-| commit_date        | TIMESTAMP      | Yes      |                      | UTC time, without timezone information  |
+| commit_date        | TIMESTAMP      | No      |                      | UTC time, without timezone information  |
 
 </details>
 
