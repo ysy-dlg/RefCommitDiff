@@ -7,7 +7,7 @@
 
 The dataset can be downloaded from the following URL:
 
-(https://github.com/ysy-dlg/RefCommitDiff/releases/tag/v1.0.0)
+https://github.com/ysy-dlg/RefCommitDiff/releases/tag/v1.0.0
 
 
 
