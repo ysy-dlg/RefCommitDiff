@@ -38,7 +38,7 @@ commit_hunks_finergit         repository
 | hunk_id          | INTEGER             | No       |                      | Unique identifier for the hunk, starting from 0              |
 | hunk_header      | TEXT                | No       |                      | Header information of the hunk, describing the context or code location |
 | hunk_size_lines  | INTEGER             | No       |                      | Total number of lines in the hunk                             |
-| line_id          | INT                 | No       |                      | Unique identifier for the line, starting from 0              |
+| line_id          | INTEGER                 | No       |                      | Unique identifier for the line, starting from 0              |
 | change_type      | ENUM('+', '-')      | No       |                      | Type of change (`+` for addition, `-` for deletion)           |
 | token_type       | VARCHAR(50)         | Yes      |                      | Type of token; for comment lines, it may be empty or `JAVADOCCOMMENT` |
 | token_value      | TEXT                | No       |                      | Value of the token                                            |
@@ -142,7 +142,7 @@ commit_hunks_finergit         repository
 | id                      | INTEGER        | No       | Primary Key          | Auto-increment                          |
 | commit_id               | VARCHAR(40)    | No       |                      | FinerGit commit ID                      |
 | repository_name   | VARCHAR(255)   | No      |                      | Name of the repository, used to identify or describe it      |
-| file_similarity_score   | INT            | No       |                      | Rxx                                  |
+| file_similarity_score   | INTEGER            | No       |                      | Rxx                                  |
 | change_type             | VARCHAR(30)    | No       |                      | Rename Method, Change Parameter, Rename Method+, Move Method, Move Method+, Move and Rename Method, Move and Rename Method+ |
 | change_type_info        | TEXT           | No       |                      |                                          |
 | old_filename           | VARCHAR(255)   | No       |                      |                                          |
