@@ -145,8 +145,8 @@ commit_hunks_finergit         repository
 | file_similarity_score   | INT            | No       |                      | Rxx                                  |
 | change_type             | VARCHAR(30)    | No       |                      | Rename Method, Change Parameter, Rename Method+, Move Method, Move Method+, Move and Rename Method, Move and Rename Method+ |
 | change_type_info        | TEXT           | No       |                      |                                          |
-| old_file_path           | VARCHAR(255)   | No       |                      |                                          |
-| new_file_path           | VARCHAR(255)   | No       |                      |                                          |
+| old_filename           | VARCHAR(255)   | No       |                      |                                          |
+| new_filename           | VARCHAR(255)   | No       |                      |                                          |
 
 
 </details>
