@@ -10,7 +10,8 @@ The dataset can be downloaded from the following URL:
 https://github.com/ysy-dlg/RefCommitDiff/releases/tag/v1.0.0
 
 # manual analysis
-* [Findings ](./Database/manual_analysis/findings.md)
+* [Findings ](./manual_analysis/findings.md)
+
 
 
   
