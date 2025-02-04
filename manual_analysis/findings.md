@@ -76,14 +76,14 @@ file renamed -> entity changed name, file was modified
 file modified -> file was modified
 ```
 
-# 不同位置不同文件，修改内容相似
+# Different path, different files, similar modifications.
 ```
 cc6cc217cc14dedd2767c686bb91b064213f2f75
 636ca09e9ed091efabc7784661e8f0994175c73d
 636ca09e9ed091efabc7784661e8f0994175c73d
 ```
 
-# 不算Adding an Identifier
+# not `Adding an Identifier`
 ```
 @@ -146,6 +146,8 @@ handlerConfig	VARIABLENAME
  ,	METHODINVOCATIONCOMMA
@@ -95,28 +95,11 @@ cc6cc217cc14dedd2767c686bb91b064213f2f75
  )	RIGHTMETHODINVOCATIONPAREN
  ,	METHODINVOCATIONCOMMA
 ```
-在这种情况下，这并不算 **"Adding an Identifier"**，而是 **方法调用时添加参数**。
+In this case, it does not count as `Adding an Identifier`, but rather **adding a parameter in a method call**.
 
-### 解释：
-- **"Adding an Identifier"** 一般是指在代码中新增一个变量、函数名或类型等标识符（例如变量声明、函数定义、类名等）。例如：
 
-```java
-int newVariable;  // Adding an identifier: new variable
-```
 
-而你提供的代码：
-
-```java
-getFilter(handler, handlerConfig);
-```
-
-是对已定义的 `getFilter` 方法的调用，并且 **在调用时新增了参数**（`handler` 和 `handlerConfig`）。这只是调用了一个已有的方法，而不是声明新的标识符。因此，它不算 "Adding an Identifier"。
-
-### 总结：
-- **"Adding an Identifier"** 通常指的是在代码中添加新的变量、方法、类型等标识符。
-- 你给出的代码是方法调用时传递新的参数，不涉及标识符的新增，因此它不算 "Adding an Identifier"。
-
-# 没有hunk的修改文件, 文件状态`R100`，方法移动重构
+# Files without hunk modifications, file status `R100`, method move refactoring.
 `2535a4b531618dc2a5b43e1dc9390a002a4e9938`
 
 ```
@@ -139,7 +122,7 @@ rename from src/main/java/net/engio/mbassy/bus/config/IBusConfiguration#Subscrip
 rename to src/main/java/net/engio/mbassy/bus/config/ISyncBusConfiguration#SubscriptionFactory_getSubscriptionFactory().mjava
 ```
 
-# 发现了同一文件，一个hunk里删除一个hunk里增加相同内容，代码移动
+# Found in the same file: one hunk deletes and another hunk adds the same content, indicating code movement.
 
 `d72522598c61ca6d0d408ebceb14695311f26998`
 
@@ -246,7 +229,7 @@ index eec52f9..766fcb0 100644
 
 
 
-# mjava的文件状态是Rxx,但hunk仅是replacing code，那就有可能是类名发生改变
+# If the `.mjava` file status is `Rxx`, but the hunk only involves replacing code, it is likely that the class name or file path has changed. In any case, the modification is unrelated to file renaming.
 `61d868dd4793f60c2cefbfe57a2edabd66231d6c`
 
 ```
@@ -399,7 +382,7 @@ index f6847b9..70b144a 100644
  (	LEFTMETHODINVOCATIONPAREN
 ```
 
-# mjava文件名并不完整，比如
+# The `.mjava` filenames are not complete, for example:
 `4a3cb70ccbec732a7d823bd0d718aa3a16665cd1`
 
 ```
@@ -422,7 +405,7 @@ index c30ddc0..ad3548a 100644
  State	TYPENAME
 ```
 
-# 有的hunk header相同，修改行数之类的一致，很可能是相同修改或者关联修改
+# Some hunk headers are identical, with the same number of modified lines, which likely indicates the same modification or related modifications.
 
 ```
 bb390c67bdc2aab28af2e631432fea883473ee56
@@ -475,7 +458,7 @@ index 98c14af..8886941 100644
 
 ```
 
-# 同一个文件修改记录，一个修改了方法签名里的参数类型和参数名，另一个相应修改了使用时的参数名
+# In the same file's modification record, one change updates the parameter type and name in the method signature, while another correspondingly updates the parameter name in its usage.
 
 ```
 bb390c67bdc2aab28af2e631432fea883473ee56
@@ -510,7 +493,7 @@ index f982acf..0f1de07 100644
  }	RIGHTMETHODBRACKET
 ```
 
-# 同一个文件，一个hunk修改了方法名，另一个用方法名做类型的变量类型修改了
+# In the same file, one hunk renames a method, while another modifies a related parameter type, suggesting a consistent naming refactor.
 
 ```
 
@@ -541,7 +524,7 @@ index 3291daa..300e93c 100644
  {	LEFTMETHODBRACKET
 ```
 
-# 类名变化，文件名没变化，文件修改和类名无关，单纯移动方法和其他文件名无关修改
+# Class name changed, but the file name remained unchanged. The file modification is unrelated to the class name. Methods were simply moved, and the modifications are unrelated to other file names.
 `f78be61bb2698c70f33ad58fbebb625e2987b172`
 ```
 ====== DIFF: a/src/test/java/net/engio/mbassy/ConditionalHandlers#public_void_testSimpleStringCondition().mjava ======
@@ -743,7 +726,7 @@ index 48cf12f..d765c55 100644
 
 
 
-# 不同文件，相同hunk修改
+# Different files, same hunk modifications.
 `f78be61bb2698c70f33ad58fbebb625e2987b172`
 ```
 ====== DIFF: a/src/test/java/net/engio/mbassy/ConditionalHandlers#public_void_testHandleCombinedEL().mjava ======
@@ -908,7 +891,7 @@ index a80ec63..de1ae40 100644
 
 
 ```
-# 这种代码我之前标注的的是``replacing code`,但现在我标注的是`changing identifer type`
+# I previously labeled this type of code as `replacing code`, but now I label it as `changing identifier type`.
 
 ```
 ====== DIFF: a/src/test/java/net/engio/mbassy/common/MessageBusTest#public_void_setUp().mjava ======
@@ -925,4 +908,41 @@ index da8e248..25fa9a4 100644
  >	GREAT
  (	LEFTCLASSINSTANCECREATIONPAREN
  )	RIGHTCLASSINSTANCECREATIONPAREN
+```
+
+
+
+
+# FINDINGS & Problems
+```
+1. Move Method Refactoring
+Analyze the file modification records processed by FinerGit. If the file status is "R100" and contains no hunks, it can be inferred that there is a "Move Method" refactoring.
+For example: commit_id:2535a4b531618dc2a5b43e1dc9390a002a4e9938
+====== DIFF======
+diff --git a/src/main/java/net/engio/mbassy/bus/config/IBusConfiguration#MessagePublication.Factory_getMessagePublicationFactory().mjava b/src/main/java/net/engio/mbassy/bus/config/ISyncBusConfiguration#MessagePublication.Factory_getMessagePublicationFactory().mjava
+similarity index 100%
+rename from src/main/java/net/engio/mbassy/bus/config/IBusConfiguration#MessagePublication.Factory_getMessagePublicationFactory().mjava
+rename to src/main/java/net/engio/mbassy/bus/config/ISyncBusConfiguration#MessagePublication.Factory_getMessagePublicationFactory().mjava
+====== DIFF======
+
+====== ORIGINAL======
+The corresponding modification records for the original file are as follows:
+commit_id, file_status, old_filename, new_filename
+52f52864de3a0b9fc9b6a0459370f63a18510834, M, src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus.java, NULL
+====== ORIGINAL======
+
+2. Analyze the file modification records processed by FinerGit. If the file status is "Rxx" and contains hunks with minor changes, marked as part of the "Changing Identifiers" series, "Changing Return Type," or "Changing Access Modifier," it can be inferred that there is a "Changing Parameter," "Changing Return Type," or "Changing Access Modifier" refactoring. All of these changes modify the method signature.
+
+3. Analyze the file modification records processed by FinerGit. If the file status is M and contains hunks, but the hunks are marked as part of the "Changing Method Modifier" series, during manual analysis, I found that the "mjava" filenames processed by FinerGit do not include the Method Modifier. Therefore, even though the file status is M, the method signature has actually been changed. It can be inferred that there is a "Changing Method Modifier" series refactoring.
+
+4. Analyze the file modification records processed by FinerGit. If the file status is M and contains hunks and the hunks are marked as part of the "Changing Annotation" series, it can be inferred that there is a "Changing Annotation" series refactoring.
+
+5. Two hunks added and removed the same code in the diff of the same file modification, but it doesn't seem closely related to code cloning or refactoring.
+
+6. I haven't performed a content comparison or manually checked the contents of the "file created" and "file removed" hunks for now. As for the hunks marked as "Removing Code" and "Adding Code," I have only found one set of similar codes being added, removed, or moved (Project 5). In the future, using the `diff_lines` data table for content comparison might reveal more meaningful code behavior.
+The hunks information I currently output includes the corresponding diff information for the mjava files processed by FinerGit. I initially intended also to output the diff information for the original files, but due to the difficulty in matching Java file paths with mjava file paths, I haven't achieved this goal yet. For now, I can only manually retrieve the diff information for the original files.
+
+7. If the file status is “M” but the hunks are “changing identifiers”, I think it can be inferred that they are “change
+variable” refactoring. I will continue to organize my findings later.
+
 ```
