@@ -83,19 +83,6 @@ cc6cc217cc14dedd2767c686bb91b064213f2f75
 636ca09e9ed091efabc7784661e8f0994175c73d
 ```
 
-# not `Adding an Identifier`
-```
-@@ -146,6 +146,8 @@ handlerConfig	VARIABLENAME
- ,	METHODINVOCATIONCOMMA
- getFilter	INVOKEDMETHODNAME
- (	LEFTMETHODINVOCATIONPAREN
-+handler	VARIABLENAME
-+,	METHODINVOCATIONCOMMA
- handlerConfig	VARIABLENAME
- )	RIGHTMETHODINVOCATIONPAREN
- ,	METHODINVOCATIONCOMMA
-```
-In this case, it does not count as `Adding an Identifier`, but rather **adding a parameter in a method call**.
 
 
 
