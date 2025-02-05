@@ -878,24 +878,7 @@ index a80ec63..de1ae40 100644
 
 
 ```
-# I previously labeled this type of code as `replacing code`, but now I label it as `changing identifier type`.
 
-```
-====== DIFF: a/src/test/java/net/engio/mbassy/common/MessageBusTest#public_void_setUp().mjava ======
-diff --git a/src/test/java/net/engio/mbassy/common/MessageBusTest#public_void_setUp().mjava b/src/test/java/net/engio/mbassy/common/MessageBusTest#public_void_setUp().mjava
-index da8e248..25fa9a4 100644
---- a/src/test/java/net/engio/mbassy/common/MessageBusTest#public_void_setUp().mjava
-+++ b/src/test/java/net/engio/mbassy/common/MessageBusTest#public_void_setUp().mjava
-@@ -10,7 +10,7 @@ issuedPublications	VARIABLENAME
- new	NEW
- StrongConcurrentSet	TYPENAME
- <	LESS
--MessagePublication	TYPENAME
-+IMessagePublication	TYPENAME
- >	GREAT
- (	LEFTCLASSINSTANCECREATIONPAREN
- )	RIGHTCLASSINSTANCECREATIONPAREN
-```
 
 
 
