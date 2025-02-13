@@ -199,7 +199,7 @@ index 72c45f4..9dfb911 100644
 # Rename Method
 - same path, same class name, different method name
 
-# tokenized log
+## tokenized log
 - R55
 
 ```
@@ -333,4 +333,139 @@ index 8fa9250..57ad85f 100644
  }	RIGHTCATCHCLAUSEBRACKET
  }	RIGHTMETHODBRACKET
 ```
+## original log
 
+```
+====== DIFF: a/src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus.java ======
+diff --git a/src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus.java b/src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus.java
+index d4187d1..d6b7e27 100644
+--- a/src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus.java
++++ b/src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus.java
+@@ -17,7 +17,8 @@ import java.util.concurrent.TimeUnit;
+  * @param <T>
+  * @param <P>
+  */
+-public abstract class AbstractSyncAsyncMessageBus<T, P extends ISyncAsyncPublicationCommand> extends AbstractSyncMessageBus<T, P> implements IMessageBus<T, P> {
++public abstract class AbstractSyncAsyncMessageBus<T, P extends ISyncAsyncPublicationCommand>
++        extends AbstractPubSubSupport<T> implements IMessageBus<T, P> {
+ 
+     // executor for asynchronous message handlers
+     private final ExecutorService executor;
+@@ -47,13 +48,15 @@ public abstract class AbstractSyncAsyncMessageBus<T, P extends ISyncAsyncPublica
+             Thread dispatcher = configuration.getThreadFactoryForAsynchronousMessageDispatch().newThread(new Runnable() {
+                 public void run() {
+                     while (true) {
++                        MessagePublication publication = null;
+                         try {
+-                            pendingMessages.take().execute();
++                            publication = pendingMessages.take();
++                            publication.execute();
+                         } catch (InterruptedException e) {
+                             Thread.currentThread().interrupt();
+                             return;
+                         } catch(Throwable t){
+-                            handlePublicationError(new PublicationError(t, "Error in asynchronous dispatch", null, null, null));
++                            handlePublicationError(new PublicationError(t, "Error in asynchronous dispatch",publication));
+                         }
+                     }
+                 }
+@@ -64,26 +67,26 @@ public abstract class AbstractSyncAsyncMessageBus<T, P extends ISyncAsyncPublica
+     }
+ 
+ 
+-    // this method enqueues a message delivery request
+-    protected MessagePublication addAsynchronousDeliveryRequest(MessagePublication request) {
++    // this method queues a message delivery request
++    protected MessagePublication addAsynchronousPublication(MessagePublication publication) {
+         try {
+-            pendingMessages.put(request);
+-            return request.markScheduled();
++            pendingMessages.put(publication);
++            return publication.markScheduled();
+         } catch (InterruptedException e) {
+-            // TODO: publication error
+-            return request;
++            handlePublicationError(new PublicationError(e, "Error while adding an asynchronous message publication", publication));
++            return publication;
+         }
+     }
+ 
+     // this method queues a message delivery request
+-    protected MessagePublication addAsynchronousDeliveryRequest(MessagePublication request, long timeout, TimeUnit unit) {
++    protected MessagePublication addAsynchronousPublication(MessagePublication publication, long timeout, TimeUnit unit) {
+         try {
+-            return pendingMessages.offer(request, timeout, unit)
+-                    ? request.markScheduled()
+-                    : request;
++            return pendingMessages.offer(publication, timeout, unit)
++                    ? publication.markScheduled()
++                    : publication;
+         } catch (InterruptedException e) {
+-            // TODO: publication error
+-            return request;
++            handlePublicationError(new PublicationError(e, "Error while adding an asynchronous message publication", publication));
++            return publication;
+         }
+     }
+```
+
+- Associated Modifications
+
+**tokenized log**
+
+```
+====== DIFF: a/src/main/java/net/engio/mbassy/bus/MBassador#public_MessagePublication_publishAsync(T,long,TimeUnit).mjava ======
+diff --git a/src/main/java/net/engio/mbassy/bus/MBassador#public_MessagePublication_publishAsync(T,long,TimeUnit).mjava b/src/main/java/net/engio/mbassy/bus/MBassador#public_MessagePublication_publishAsync(T,long,TimeUnit).mjava
+index 2e0bd9f..919006f 100644
+--- a/src/main/java/net/engio/mbassy/bus/MBassador#public_MessagePublication_publishAsync(T,long,TimeUnit).mjava
++++ b/src/main/java/net/engio/mbassy/bus/MBassador#public_MessagePublication_publishAsync(T,long,TimeUnit).mjava
+@@ -14,7 +14,7 @@ unit	VARIABLENAME
+ )	RIGHTMETHODPAREN
+ {	LEFTMETHODBRACKET
+ return	RETURN
+-addAsynchronousDeliveryRequest	INVOKEDMETHODNAME
++addAsynchronousPublication	INVOKEDMETHODNAME
+ (	LEFTMETHODINVOCATIONPAREN
+ createMessagePublication	INVOKEDMETHODNAME
+ (	LEFTMETHODINVOCATIONPAREN
+```
+
+```
+====== DIFF: a/src/main/java/net/engio/mbassy/bus/MBassador#public_MessagePublication_publishAsync(T).mjava ======
+diff --git a/src/main/java/net/engio/mbassy/bus/MBassador#public_MessagePublication_publishAsync(T).mjava b/src/main/java/net/engio/mbassy/bus/MBassador#public_MessagePublication_publishAsync(T).mjava
+index cb66d7a..dd2777f 100644
+--- a/src/main/java/net/engio/mbassy/bus/MBassador#public_MessagePublication_publishAsync(T).mjava
++++ b/src/main/java/net/engio/mbassy/bus/MBassador#public_MessagePublication_publishAsync(T).mjava
+@@ -8,7 +8,7 @@ message	VARIABLENAME
+ )	RIGHTMETHODPAREN
+ {	LEFTMETHODBRACKET
+ return	RETURN
+-addAsynchronousDeliveryRequest	INVOKEDMETHODNAME
++addAsynchronousPublication	INVOKEDMETHODNAME
+ (	LEFTMETHODINVOCATIONPAREN
+ createMessagePublication	INVOKEDMETHODNAME
+ (	LEFTMETHODINVOCATIONPAREN
+```
+
+
+**original log**
+```
+====== DIFF: a/src/main/java/net/engio/mbassy/bus/MBassador.java ======
+diff --git a/src/main/java/net/engio/mbassy/bus/MBassador.java b/src/main/java/net/engio/mbassy/bus/MBassador.java
+index e99f937..ee4206f 100644
+--- a/src/main/java/net/engio/mbassy/bus/MBassador.java
++++ b/src/main/java/net/engio/mbassy/bus/MBassador.java
+@@ -16,12 +16,12 @@ public class MBassador<T> extends AbstractSyncAsyncMessageBus<T, SyncAsyncPostCo
+ 
+     @Override
+     public MessagePublication publishAsync(T message) {
+-        return addAsynchronousDeliveryRequest(createMessagePublication(message));
++        return addAsynchronousPublication(createMessagePublication(message));
+     }
+ 
+     @Override
+     public MessagePublication publishAsync(T message, long timeout, TimeUnit unit) {
+-        return addAsynchronousDeliveryRequest(createMessagePublication(message), timeout, unit);
++        return addAsynchronousPublication(createMessagePublication(message), timeout, unit);
+     }
+```
