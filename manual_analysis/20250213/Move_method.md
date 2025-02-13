@@ -1324,7 +1324,7 @@ index eb5e62e..c9684ff 100644
 </details>
 
 <details>
-<summary>src/main/java/org/mbassy/MBassador</summary>
+<summary>src/main/java/org/mbassy/AbstractMessageBus</summary>
 
 ```
 ====== DIFF: a/src/main/java/org/mbassy/AbstractMessageBus.java ======
