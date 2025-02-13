@@ -1727,5 +1727,140 @@ index 18e28a2..2e10805 100644
 
 
 
- # Move and Rename Method
+# Move and Rename Method
+### Three Types  
+| Path Change       | Class Name Change       | Method Name Change | Count |
+|-------------------|------------------------|--------------------|-------|
+| Same path        | Different class names   | Different methods  | 3     |
+| Different paths  | Different class names   | Different methods  | 0     |
+| Different paths  | Same class name         | Different methods  | 0     |
+
+
+
+| repository_name | commit_id | file_similarity_score | change_type | change_type_info | old_filename | new_filename |
+|----------------|-----------|----------------------|----------------------|------------------|--------------|--------------|
+| mbassador | f8c5bbe | 93 | Move and Rename Method | 'private_Collection[Subscription]_getSubscriptionsByMessageType' at 'src/main/java/org/mbassy/MBassador' to 'protected_Collection[Subscription]_getSubscriptionsByMessageType' at 'src/main/java/org/mbassy/AbstractMessageBus' | src/main/java/org/mbassy/MBassador#private_Collection[Subscription]_getSubscriptionsByMessageType(Class).mjava | src/main/java/org/mbassy/AbstractMessageBus#protected_Collection[Subscription]_getSubscriptionsByMessageType(Class).mjava |
+| mbassador | f8c5bbe | 60 | Move and Rename Method | 'public_void_setErrorHandler' at 'src/main/java/org/mbassy/MBassador' to 'public_void_addErrorHandler' at 'src/main/java/org/mbassy/AbstractMessageBus' | src/main/java/org/mbassy/MBassador#public_void_setErrorHandler(IPublicationErrorHandler).mjava | src/main/java/org/mbassy/AbstractMessageBus#public_void_addErrorHandler(IPublicationErrorHandler).mjava |
+| mbassador | f8c5bbe | 67 | Move and Rename Method | 'private_void_handlePublicationError' at 'src/main/java/org/mbassy/MBassador' to 'public_void_handlePublicationError' at 'src/main/java/org/mbassy/AbstractMessageBus' | src/main/java/org/mbassy/MBassador#private_void_handlePublicationError(PublicationError).mjava | src/main/java/org/mbassy/AbstractMessageBus#public_void_handlePublicationError(PublicationError).mjava |
+
+#### tokenized log
+
+<details>
+<summary>R93</summary>
+ 
+```
+====== DIFF: a/src/main/java/org/mbassy/MBassador#private_Collection[Subscription]_getSubscriptionsByMessageType(Class).mjava ======
+diff --git a/src/main/java/org/mbassy/MBassador#private_Collection[Subscription]_getSubscriptionsByMessageType(Class).mjava b/src/main/java/org/mbassy/AbstractMessageBus#protected_Collection[Subscription]_getSubscriptionsByMessageType(Class).mjava
+similarity index 93%
+rename from src/main/java/org/mbassy/MBassador#private_Collection[Subscription]_getSubscriptionsByMessageType(Class).mjava
+rename to src/main/java/org/mbassy/AbstractMessageBus#protected_Collection[Subscription]_getSubscriptionsByMessageType(Class).mjava
+index 59438b4..aa7d902 100644
+--- a/src/main/java/org/mbassy/MBassador#private_Collection[Subscription]_getSubscriptionsByMessageType(Class).mjava
++++ b/src/main/java/org/mbassy/AbstractMessageBus#protected_Collection[Subscription]_getSubscriptionsByMessageType(Class).mjava
+@@ -1,4 +1,4 @@
+-private	PRIVATE
++protected	PROTECTED
+ Collection	TYPENAME
+ <	LESS
+ Subscription	TYPENAME
+@@ -9,18 +9,21 @@ Class	TYPENAME
+ messageType	VARIABLENAME
+ )	RIGHTMETHODPAREN
+ {	LEFTMETHODBRACKET
+-List	TYPENAME
++Set	TYPENAME
+ <	LESS
+ Subscription	TYPENAME
+ >	GREAT
+ subscriptions	VARIABLENAME
+ =	ASSIGN
+ new	NEW
+-LinkedList	TYPENAME
++TreeSet	TYPENAME
+ <	LESS
+ Subscription	TYPENAME
+ >	GREAT
+ (	LEFTCLASSINSTANCECREATIONPAREN
++Subscription	VARIABLENAME
++.	DOT
++SubscriptionByPriorityDesc	VARIABLENAME
+ )	RIGHTCLASSINSTANCECREATIONPAREN
+ ;	VARIABLEDECLARATIONSTATEMENTSEMICOLON
+ if	IF
+```
+</details>
+
+<details>
+<summary>R60</summary>
+
+```
+====== DIFF: a/src/main/java/org/mbassy/MBassador#public_void_setErrorHandler(IPublicationErrorHandler).mjava ======
+diff --git a/src/main/java/org/mbassy/MBassador#public_void_setErrorHandler(IPublicationErrorHandler).mjava b/src/main/java/org/mbassy/AbstractMessageBus#public_void_addErrorHandler(IPublicationErrorHandler).mjava
+similarity index 60%
+rename from src/main/java/org/mbassy/MBassador#public_void_setErrorHandler(IPublicationErrorHandler).mjava
+rename to src/main/java/org/mbassy/AbstractMessageBus#public_void_addErrorHandler(IPublicationErrorHandler).mjava
+index 3d4158a..a2108fe 100644
+--- a/src/main/java/org/mbassy/MBassador#public_void_setErrorHandler(IPublicationErrorHandler).mjava
++++ b/src/main/java/org/mbassy/AbstractMessageBus#public_void_addErrorHandler(IPublicationErrorHandler).mjava
+@@ -1,15 +1,16 @@
+ public	PUBLIC
+ void	VOID
+-setErrorHandler	DECLAREDMETHODNAME
++addErrorHandler	DECLAREDMETHODNAME
+ (	LEFTMETHODPAREN
+ IPublicationErrorHandler	TYPENAME
+ handler	VARIABLENAME
+ )	RIGHTMETHODPAREN
+ {	LEFTMETHODBRACKET
+-this	THIS
++errorHandlers	VARIABLENAME
+ .	DOT
+-errorHandler	VARIABLENAME
+-=	ASSIGN
++add	INVOKEDMETHODNAME
++(	LEFTMETHODINVOCATIONPAREN
+ handler	VARIABLENAME
++)	RIGHTMETHODINVOCATIONPAREN
+ ;	EXPRESSIONSTATEMENTSEMICOLON
+ }	RIGHTMETHODBRACKET
+```
+ 
+</details> 
+
+<details>
+<summary>R67</summary>
+
+```
+====== DIFF: a/src/main/java/org/mbassy/MBassador#private_void_handlePublicationError(PublicationError).mjava ======
+diff --git a/src/main/java/org/mbassy/MBassador#private_void_handlePublicationError(PublicationError).mjava b/src/main/java/org/mbassy/AbstractMessageBus#public_void_handlePublicationError(PublicationError).mjava
+similarity index 67%
+rename from src/main/java/org/mbassy/MBassador#private_void_handlePublicationError(PublicationError).mjava
+rename to src/main/java/org/mbassy/AbstractMessageBus#public_void_handlePublicationError(PublicationError).mjava
+index 2b93a68..88a8d13 100644
+--- a/src/main/java/org/mbassy/MBassador#private_void_handlePublicationError(PublicationError).mjava
++++ b/src/main/java/org/mbassy/AbstractMessageBus#public_void_handlePublicationError(PublicationError).mjava
+@@ -1,4 +1,4 @@
+-private	PRIVATE
++public	PUBLIC
+ void	VOID
+ handlePublicationError	DECLAREDMETHODNAME
+ (	LEFTMETHODPAREN
+@@ -6,6 +6,13 @@ PublicationError	TYPENAME
+ error	VARIABLENAME
+ )	RIGHTMETHODPAREN
+ {	LEFTMETHODBRACKET
++for	FOR
++(	LEFTENHANCEDFORPAREN
++IPublicationErrorHandler	TYPENAME
++errorHandler	VARIABLENAME
++:	COLON
++errorHandlers	VARIABLENAME
++)	RIGHTENHANCEDFORPAREN
+ errorHandler	VARIABLENAME
+ .	DOT
+ handleError	INVOKEDMETHODNAME
+```
+
+</details> 
+
 </details>
