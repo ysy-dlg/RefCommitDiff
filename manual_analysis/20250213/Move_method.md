@@ -1719,5 +1719,13 @@ index 18e28a2..2e10805 100644
 ```
 </details>
 
+
+| **Refactoring Type**         | **Detailed Changes** |
+|-----------------------------|------------------------------------------------------------|
+| **Extract Superclass**       | Extracted `AbstractMessageBus.java` as a new superclass to centralize the message bus logic that was previously in `MBassador.java` |
+| **Move Method**              | Multiple methods from `MBassador.java`, such as `subscribe()`, `unsubscribe()`, `handlePublicationError()`, and `getSubscriptionsByMessageType()`, were moved to `AbstractMessageBus.java` |
+
+
+
  # Move and Rename Method
 </details>
