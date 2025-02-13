@@ -1866,6 +1866,6 @@ index 2b93a68..88a8d13 100644
 | **Extract Superclass**       | Extracted `AbstractMessageBus.java` as a new superclass to centralize the message bus logic that was previously in `MBassador.java` |
 | **Move Method**              | Multiple methods from `MBassador.java`, such as `subscribe()`, `unsubscribe()`, `handlePublicationError()`, and `getSubscriptionsByMessageType()`, were moved to `AbstractMessageBus.java` |
 | **Change Method Access Modifier** | `getSubscriptionsByMessageType()` was changed from `private` to `protected`, `handlePublicationError(PublicationError error)` was changed from `private` to `public` |
-| **Rename Method** | ❌ Method behavior was changed |
+| **Rename Method** | R60 ❌ Method behavior was changed |
 
 </details>
