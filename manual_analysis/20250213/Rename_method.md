@@ -190,7 +190,7 @@ index 72c45f4..9dfb911 100644
          public SyncPostCommand(T message) {
 ```
 
-
+---
 | repository_name | commit_id | file_similarity_score | change_type | change_type_info | old_filename | new_filename |
 |----------------|-----------|----------------------|-------------|------------------|--------------|--------------|
 | mbassador | 294461c | 55 | Rename Method | 'protected_MessagePublication_addAsynchronousDeliveryRequest' to 'protected_MessagePublication_addAsynchronousPublication' at 'src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus' | src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousDeliveryRequest(MessagePublication).mjava | src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousPublication(MessagePublication).mjava |
