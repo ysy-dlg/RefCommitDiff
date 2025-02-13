@@ -752,3 +752,43 @@ index 0000000..22fb1da
 | `testConcurrentMixedMessagePublication()` | `MessagePublicationTest` | Listener instances increased from 100 → 10000 |
 
 </details>
+
+
+<details>
+<summary>f8c5bbed910ee0cf16390f32f06f650e0020b1e5</summary>
+
+ - Move method: 17
+ - Move and Rename Method: 3
+
+# Move method
+ 
+## Three types 
+| Path Change | Class Name Change | Count |
+|----------------------------|----------------------------|-------|
+| Different paths | Same class name | 8 |
+| Different paths | Different class names | 1 |
+| Same path | Different class name | 8 |
+
+## Different paths, same class name
+
+## Different paths, different class names
+
+## Same path, different class name
+
+| repository_name | commit_id | file_similarity_score | change_type | change_type_info | old_filename | new_filename |
+|----------------|-----------|----------------------|-------------|------------------|--------------|--------------|
+| mbassador | f8c5bbe | 100 | Move Method | 'private_Class_getMessageType' from 'src/main/java/org/mbassy/MBassador' to 'src/main/java/org/mbassy/AbstractMessageBus' | src/main/java/org/mbassy/MBassador#private_Class_getMessageType(Method).mjava | src/main/java/org/mbassy/AbstractMessageBus#private_Class_getMessageType(Method).mjava |
+| mbassador | f8c5bbe | 100 | Move Method | 'private_Collection[Class]_getSuperclasses' from 'src/main/java/org/mbassy/MBassador' to 'src/main/java/org/mbassy/AbstractMessageBus' | src/main/java/org/mbassy/MBassador#private_Collection[Class]_getSuperclasses(Class).mjava | src/main/java/org/mbassy/AbstractMessageBus#private_Collection[Class]_getSuperclasses(Class).mjava |
+| mbassador | f8c5bbe | 100 | Move Method | 'private_List[Method]_getListeners' from 'src/main/java/org/mbassy/MBassador' to 'src/main/java/org/mbassy/AbstractMessageBus' | src/main/java/org/mbassy/MBassador#private_List[Method]_getListeners(Class[#]).mjava | src/main/java/org/mbassy/AbstractMessageBus#private_List[Method]_getListeners(Class[#]).mjava |
+| mbassador | f8c5bbe | 100 | Move Method | 'private_boolean_isValidMessageHandler' from 'src/main/java/org/mbassy/MBassador' to 'src/main/java/org/mbassy/AbstractMessageBus' | src/main/java/org/mbassy/MBassador#private_boolean_isValidMessageHandler(Method).mjava | src/main/java/org/mbassy/AbstractMessageBus#private_boolean_isValidMessageHandler(Method).mjava |
+| mbassador | f8c5bbe | 100 | Move Method | 'private_void_addMessageTypeSubscription' from 'src/main/java/org/mbassy/MBassador' to 'src/main/java/org/mbassy/AbstractMessageBus' | src/main/java/org/mbassy/MBassador#private_void_addMessageTypeSubscription(Class,Subscription).mjava | src/main/java/org/mbassy/AbstractMessageBus#private_void_addMessageTypeSubscription(Class,Subscription).mjava |
+| mbassador | f8c5bbe | 100 | Move Method | 'public_void_unsubscribe' from 'src/main/java/org/mbassy/MBassador' to 'src/main/java/org/mbassy/AbstractMessageBus' | src/main/java/org/mbassy/MBassador#public_void_unsubscribe(Object).mjava | src/main/java/org/mbassy/AbstractMessageBus#public_void_unsubscribe(Object).mjava |
+| mbassador | f8c5bbe | 96 | Move Method | 'private_void_initDispatcherThreads' from 'src/main/java/org/mbassy/MBassador' to 'src/main/java/org/mbassy/AbstractMessageBus' | src/main/java/org/mbassy/MBassador#private_void_initDispatcherThreads(int).mjava | src/main/java/org/mbassy/AbstractMessageBus#private_void_initDispatcherThreads(int).mjava |
+| mbassador | f8c5bbe | 91 | Move Method | 'public_void_subscribe' from 'src/main/java/org/mbassy/MBassador' to 'src/main/java/org/mbassy/AbstractMessageBus' | src/main/java/org/mbassy/MBassador#public_void_subscribe(Object).mjava | src/main/java/org/mbassy/AbstractMessageBus#public_void_subscribe(Object).mjava |
+
+### without hunks
+
+### with hunks
+
+ # Move and Rename Method
+</details>
