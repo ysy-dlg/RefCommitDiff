@@ -183,7 +183,7 @@ rename to src/test/java/net/engio/mbassy/ListenerSubscriptionTest#private_int_ge
 #### original log
 
 <details>
-<summary>both</summary>
+<summary>Associated Modifications</summary>
 
 ```
 ====== DIFF: a/src/test/java/org/mbassy/AllTests.java ======
