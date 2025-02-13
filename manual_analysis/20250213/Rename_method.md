@@ -63,7 +63,7 @@ rename to src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_void_s
 # Move and Rename Method
 
 - same path, different class name, different method name
-
+## tokenized log
 ```
 ====== DIFF: a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_AbstractSyncMessageBus(ISyncBusConfiguration).mjava ======
 diff --git a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_AbstractSyncMessageBus(ISyncBusConfiguration).mjava b/src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_AbstractPubSubSupport(ISyncBusConfiguration).mjava
@@ -82,7 +82,7 @@ index 6ab376d..ec96777 100644
  configuration	VARIABLENAME
 ```
 
-# original log
+## original log
 
 ```
 ====== DIFF: a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus.java ======
