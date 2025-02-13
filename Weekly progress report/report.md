@@ -1,4 +1,19 @@
 # Progress Report
+## 2025/2/13
+
+### Done
+- Classified the hunks of refactoring commits
+- Analyzed some commits (hunk ➡️ tokenized files ➡️ original files)
+
+
+  
+### To do 
+1. Classification of Hunks  
+
+2. Consider how to process the data so that it can be used to train machine learning models
+3. Machine learning model selection
+  
+
 ## 2025/1/6
 
 ### Done
