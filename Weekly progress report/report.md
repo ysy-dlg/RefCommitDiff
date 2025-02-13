@@ -4,7 +4,7 @@
 ### Done
 - Classified the hunks of refactoring commits
 - Analyzed some commits (hunk ➡️ tokenized files ➡️ original files)
-- [manual_analysis](RefCommitDiff/manual_analysis/20250213/20250213.md)
+- [manual_analysis](../manual_analysis/20250213/20250213.md)
 
 
 
