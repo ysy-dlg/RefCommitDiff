@@ -1635,7 +1635,7 @@ index 191afbf..6d8a8cc 100644
 <details>
 <summary>R91</summary>
 
- ```
+```
 ====== DIFF: a/src/main/java/org/mbassy/MBassador#public_void_subscribe(Object).mjava ======
 diff --git a/src/main/java/org/mbassy/MBassador#public_void_subscribe(Object).mjava b/src/main/java/org/mbassy/AbstractMessageBus#public_void_subscribe(Object).mjava
 similarity index 91%
