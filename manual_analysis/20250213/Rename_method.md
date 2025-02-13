@@ -1,81 +1,193 @@
 <details>
-<summary>ce80e8b4e2a2affc4965fc96824d3dfd00dd13a3</summary>
+<summary>294461c978700aae933fe9975f1ea3ceda147e0a</summary>
+
+| **hayashi Type**         | **Count** |
+|-----------------------------|----------|
+| **Move Method**             | 6        |
+| **Rename Method**           | 2        |
+| **Move and Rename Method**  | 1        |  
+
+| repository_name | commit_id | file_similarity_score | change_type | change_type_info | old_filename | new_filename |
+|----------------|-----------|----------------------|-------------|------------------|--------------|--------------|
+| mbassador | 294461c | 100 | Move Method | 'protected_Collection[Subscription]_getSubscriptionsByMessageType' from 'src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus' to 'src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport' | src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#protected_Collection[Subscription]_getSubscriptionsByMessageType(Class).mjava | src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#protected_Collection[Subscription]_getSubscriptionsByMessageType(Class).mjava |
+| mbassador | 294461c | 100 | Move Method | 'protected_MessagePublication_createMessagePublication' from 'src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus' to 'src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport' | src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#protected_MessagePublication_createMessagePublication(T).mjava | src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#protected_MessagePublication_createMessagePublication(T).mjava |
+| mbassador | 294461c | 100 | Move Method | 'public_boolean_unsubscribe' from 'src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus' to 'src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport' | src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_boolean_unsubscribe(Object).mjava | src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_boolean_unsubscribe(Object).mjava |
+| mbassador | 294461c | 100 | Move Method | 'public_void_addErrorHandler' from 'src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus' to 'src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport' | src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_void_addErrorHandler(IPublicationErrorHandler).mjava | src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_void_addErrorHandler(IPublicationErrorHandler).mjava |
+| mbassador | 294461c | 100 | Move Method | 'public_void_handlePublicationError' from 'src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus' to 'src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport' | src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_void_handlePublicationError(PublicationError).mjava | src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_void_handlePublicationError(PublicationError).mjava |
+| mbassador | 294461c | 100 | Move Method | 'public_void_subscribe' from 'src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus' to 'src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport' | src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_void_subscribe(Object).mjava | src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_void_subscribe(Object).mjava |
+| mbassador | 294461c | 97 | Move and Rename Method | 'public_AbstractSyncMessageBus' at 'src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus' to 'public_AbstractPubSubSupport' at 'src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport' | src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_AbstractSyncMessageBus(ISyncBusConfiguration).mjava | src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_AbstractPubSubSupport(ISyncBusConfiguration).mjava |
 
 
+# Move Method
 
-### Different paths, same class name
+- same path, different class name
 
+## tokenized log
+```
+====== DIFF: a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#protected_Collection[Subscription]_getSubscriptionsByMessageType(Class).mjava ======
+diff --git a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#protected_Collection[Subscription]_getSubscriptionsByMessageType(Class).mjava b/src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#protected_Collection[Subscription]_getSubscriptionsByMessageType(Class).mjava
+similarity index 100%
+rename from src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#protected_Collection[Subscription]_getSubscriptionsByMessageType(Class).mjava
+rename to src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#protected_Collection[Subscription]_getSubscriptionsByMessageType(Class).mjava
 
+====== DIFF: a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#protected_MessagePublication_createMessagePublication(T).mjava ======
+diff --git a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#protected_MessagePublication_createMessagePublication(T).mjava b/src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#protected_MessagePublication_createMessagePublication(T).mjava
+similarity index 100%
+rename from src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#protected_MessagePublication_createMessagePublication(T).mjava
+rename to src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#protected_MessagePublication_createMessagePublication(T).mjava
 
+====== DIFF: a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_boolean_unsubscribe(Object).mjava ======
+diff --git a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_boolean_unsubscribe(Object).mjava b/src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_boolean_unsubscribe(Object).mjava
+similarity index 100%
+rename from src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_boolean_unsubscribe(Object).mjava
+rename to src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_boolean_unsubscribe(Object).mjava
 
-#### tokenized log
+====== DIFF: a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_void_addErrorHandler(IPublicationErrorHandler).mjava ======
+diff --git a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_void_addErrorHandler(IPublicationErrorHandler).mjava b/src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_void_addErrorHandler(IPublicationErrorHandler).mjava
+similarity index 100%
+rename from src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_void_addErrorHandler(IPublicationErrorHandler).mjava
+rename to src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_void_addErrorHandler(IPublicationErrorHandler).mjava
+
+====== DIFF: a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_void_handlePublicationError(PublicationError).mjava ======
+diff --git a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_void_handlePublicationError(PublicationError).mjava b/src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_void_handlePublicationError(PublicationError).mjava
+similarity index 100%
+rename from src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_void_handlePublicationError(PublicationError).mjava
+rename to src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_void_handlePublicationError(PublicationError).mjava
+
+====== DIFF: a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_void_subscribe(Object).mjava ======
+diff --git a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_void_subscribe(Object).mjava b/src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_void_subscribe(Object).mjava
+similarity index 100%
+rename from src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_void_subscribe(Object).mjava
+rename to src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_void_subscribe(Object).mjava
+```
+# Move and Rename Method
+
+- same path, different class name, differrnt method name
 
 ```
-
-
+====== DIFF: a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_AbstractSyncMessageBus(ISyncBusConfiguration).mjava ======
+diff --git a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_AbstractSyncMessageBus(ISyncBusConfiguration).mjava b/src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_AbstractPubSubSupport(ISyncBusConfiguration).mjava
+similarity index 97%
+rename from src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_AbstractSyncMessageBus(ISyncBusConfiguration).mjava
+rename to src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_AbstractPubSubSupport(ISyncBusConfiguration).mjava
+index 6ab376d..ec96777 100644
+--- a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_AbstractSyncMessageBus(ISyncBusConfiguration).mjava
++++ b/src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_AbstractPubSubSupport(ISyncBusConfiguration).mjava
+@@ -1,5 +1,5 @@
+ public	PUBLIC
+-AbstractSyncMessageBus	DECLAREDMETHODNAME
++AbstractPubSubSupport	DECLAREDMETHODNAME
+ (	LEFTMETHODPAREN
+ ISyncBusConfiguration	TYPENAME
+ configuration	VARIABLENAME
 ```
 
-#### original log
+# original log
 
 ```
+====== DIFF: a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus.java ======
+diff --git a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus.java b/src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport.java
+similarity index 91%
+rename from src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus.java
+rename to src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport.java
+index 164affc..e74be6f 100644
+--- a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus.java
++++ b/src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport.java
+@@ -3,7 +3,6 @@ package net.engio.mbassy.bus;
+ import net.engio.mbassy.IPublicationErrorHandler;
+ import net.engio.mbassy.PublicationError;
+ import net.engio.mbassy.bus.config.ISyncBusConfiguration;
+-import net.engio.mbassy.bus.publication.IPublicationCommand;
+ import net.engio.mbassy.common.DeadMessage;
+ import net.engio.mbassy.subscription.Subscription;
+ import net.engio.mbassy.subscription.SubscriptionManager;
+@@ -17,9 +16,8 @@ import java.util.List;
+  * The base class for all message bus implementations.
+  *
+  * @param <T>
+- * @param <P>
+  */
+-public abstract class AbstractSyncMessageBus<T, P extends IPublicationCommand> implements ISyncMessageBus<T, P>{
++public abstract class AbstractPubSubSupport<T> implements PubSubSupport<T>{
+ 
+ 
+     // this handler will receive all errors that occur during message dispatch or message handling
+@@ -32,7 +30,7 @@ public abstract class AbstractSyncMessageBus<T, P extends IPublicationCommand> i
+     private final BusRuntime runtime;
+ 
+ 
+-    public AbstractSyncMessageBus(ISyncBusConfiguration configuration) {
++    public AbstractPubSubSupport(ISyncBusConfiguration configuration) {
+         this.runtime = new BusRuntime(this);
+         this.runtime.add("error.handlers", getRegisteredErrorHandlers());
+         this.subscriptionManager = configuration.getSubscriptionManagerProvider()
+@@ -45,7 +43,7 @@ public abstract class AbstractSyncMessageBus<T, P extends IPublicationCommand> i
+         return publicationFactory;
+     }
+ 
+-    @Override
++
+     public Collection<IPublicationErrorHandler> getRegisteredErrorHandlers() {
+         return Collections.unmodifiableCollection(errorHandlers);
+     }
+```
+
+- Associated Modifications
 
 ```
-#### Possible refactoring
-
-
-
-
-### Different paths, different class names
-
-
-
-
-#### tokenized log
+====== DIFF: a/src/main/java/net/engio/mbassy/bus/SyncMessageBus.java ======
+diff --git a/src/main/java/net/engio/mbassy/bus/SyncMessageBus.java b/src/main/java/net/engio/mbassy/bus/SyncMessageBus.java
+index 72c45f4..9dfb911 100644
+--- a/src/main/java/net/engio/mbassy/bus/SyncMessageBus.java
++++ b/src/main/java/net/engio/mbassy/bus/SyncMessageBus.java
+@@ -5,25 +5,18 @@ import net.engio.mbassy.bus.config.ISyncBusConfiguration;
+ import net.engio.mbassy.bus.publication.IPublicationCommand;
+ 
+ /**
+- * Created with IntelliJ IDEA.
+- * User: benjamin
+- * Date: 4/3/13
+- * Time: 9:02 AM
+- * To change this template use File | Settings | File Templates.
++ * A message bus implementation that offers only synchronous message publication. Using this bus
++ * will not create any new threads.
++ *
+  */
+-public class SyncMessageBus<T> extends AbstractSyncMessageBus<T, SyncMessageBus.SyncPostCommand>{
++public class SyncMessageBus<T> extends AbstractPubSubSupport<T> implements ISyncMessageBus<T, SyncMessageBus.SyncPostCommand>{
+ 
+ 
+     public SyncMessageBus(ISyncBusConfiguration configuration) {
+         super(configuration);
+     }
+ 
+-    /**
+-     * Synchronously publish a message to all registered listeners (this includes listeners defined for super types)
+-     * The call blocks until every messageHandler has processed the message.
+-     *
+-     * @param message
+-     */
++    @Override
+     public void publish(T message) {
+         try {
+             MessagePublication publication = createMessagePublication(message);
+@@ -34,7 +27,6 @@ public class SyncMessageBus<T> extends AbstractSyncMessageBus<T, SyncMessageBus.
+                     .setCause(e)
+                     .setPublishedObject(message));
+         }
+-
+     }
+ 
+     @Override
+@@ -44,7 +36,6 @@ public class SyncMessageBus<T> extends AbstractSyncMessageBus<T, SyncMessageBus.
+ 
+     public class SyncPostCommand implements IPublicationCommand {
+ 
+-
+         private T message;
+ 
+         public SyncPostCommand(T message) {
 ```
-
-```
-  
-
-#### original log
-
-<details>
-<summary>both</summary>
-
-```
-
-``` 
-</details>
-
----
-<details>
-<summary>src/test/java/org/mbassy/MBassadorTest</summary>
-
-```
-
-```
-</details>
-
----
-
-<details>
-<summary>src/test/java/net/engio/mbassy/ListenerSubscriptionTest</summary>
-  
-```
-
-```
-</details> 
-
-<details>
-<summary>src/test/java/net/engio/mbassy/MessagePublicationTest</summary>
-  
-```
-                                  
-```
-</details>
-
-#### Possible refactoring
-
-</details>
 
 
 
