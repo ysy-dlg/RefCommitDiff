@@ -485,9 +485,10 @@ index e99f937..ee4206f 100644
 ```
 
 ---
-| **Refactoring Type**         | **Detailed Changes** |
-|-----------------------------|------------------------------------------------------------|
-| **Move Method**              |  |
-| **Rename Method** |  |
+| **Refactoring Type**       | **Description** |
+|----------------------------|--------------------------------------------------------------|
+| **Rename Method**          | `addAsynchronousDeliveryRequest()` renamed to `addAsynchronousPublication()` to improve clarity and consistency. |
+| **Rename Variable**        | The variable `request` was renamed to `publication` to better reflect its role in message publication. |
+
 
 </details>
