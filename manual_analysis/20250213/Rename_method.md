@@ -62,7 +62,7 @@ rename to src/main/java/net/engio/mbassy/bus/AbstractPubSubSupport#public_void_s
 ```
 # Move and Rename Method
 
-- same path, different class name, differrnt method name
+- same path, different class name, different method name
 
 ```
 ====== DIFF: a/src/main/java/net/engio/mbassy/bus/AbstractSyncMessageBus#public_AbstractSyncMessageBus(ISyncBusConfiguration).mjava ======
@@ -134,6 +134,7 @@ index 164affc..e74be6f 100644
 
 - Associated Modifications
 
+
 ```
 ====== DIFF: a/src/main/java/net/engio/mbassy/bus/SyncMessageBus.java ======
 diff --git a/src/main/java/net/engio/mbassy/bus/SyncMessageBus.java b/src/main/java/net/engio/mbassy/bus/SyncMessageBus.java
@@ -190,6 +191,146 @@ index 72c45f4..9dfb911 100644
 ```
 
 
+| repository_name | commit_id | file_similarity_score | change_type | change_type_info | old_filename | new_filename |
+|----------------|-----------|----------------------|-------------|------------------|--------------|--------------|
+| mbassador | 294461c | 55 | Rename Method | 'protected_MessagePublication_addAsynchronousDeliveryRequest' to 'protected_MessagePublication_addAsynchronousPublication' at 'src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus' | src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousDeliveryRequest(MessagePublication).mjava | src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousPublication(MessagePublication).mjava |
+| mbassador | 294461c | 60 | Rename Method | 'protected_MessagePublication_addAsynchronousDeliveryRequest' to 'protected_MessagePublication_addAsynchronousPublication' at 'src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus' | src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousDeliveryRequest(MessagePublication,long,TimeUnit).mjava | src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousPublication(MessagePublication,long,TimeUnit).mjava |
 
+# Rename Method
+- same path, same class name, different method name
 
+# tokenized log
+- R55
+
+```
+====== DIFF: a/src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousDeliveryRequest(MessagePublication).mjava ======
+diff --git a/src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousDeliveryRequest(MessagePublication).mjava b/src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousPublication(MessagePublication).mjava
+similarity index 55%
+rename from src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousDeliveryRequest(MessagePublication).mjava
+rename to src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousPublication(MessagePublication).mjava
+index a989e7a..7202100 100644
+--- a/src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousDeliveryRequest(MessagePublication).mjava
++++ b/src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousPublication(MessagePublication).mjava
+@@ -1,9 +1,9 @@
+ protected	PROTECTED
+ MessagePublication	TYPENAME
+-addAsynchronousDeliveryRequest	DECLAREDMETHODNAME
++addAsynchronousPublication	DECLAREDMETHODNAME
+ (	LEFTMETHODPAREN
+ MessagePublication	TYPENAME
+-request	VARIABLENAME
++publication	VARIABLENAME
+ )	RIGHTMETHODPAREN
+ {	LEFTMETHODBRACKET
+ try	TRY
+@@ -12,11 +12,11 @@ pendingMessages	VARIABLENAME
+ .	DOT
+ put	INVOKEDMETHODNAME
+ (	LEFTMETHODINVOCATIONPAREN
+-request	VARIABLENAME
++publication	VARIABLENAME
+ )	RIGHTMETHODINVOCATIONPAREN
+ ;	EXPRESSIONSTATEMENTSEMICOLON
+ return	RETURN
+-request	VARIABLENAME
++publication	VARIABLENAME
+ .	DOT
+ markScheduled	INVOKEDMETHODNAME
+ (	LEFTMETHODINVOCATIONPAREN
+@@ -29,8 +29,21 @@ InterruptedException	TYPENAME
+ e	VARIABLENAME
+ )	RIGHTCATCHCLAUSEPAREN
+ {	LEFTCATCHCLAUSEBRACKET
++handlePublicationError	INVOKEDMETHODNAME
++(	LEFTMETHODINVOCATIONPAREN
++new	NEW
++PublicationError	TYPENAME
++(	LEFTCLASSINSTANCECREATIONPAREN
++e	VARIABLENAME
++,	CLASSINSTANCECREATIONCOMMA
++"Error while adding an asynchronous message publication"	STRINGLITERAL
++,	CLASSINSTANCECREATIONCOMMA
++publication	VARIABLENAME
++)	RIGHTCLASSINSTANCECREATIONPAREN
++)	RIGHTMETHODINVOCATIONPAREN
++;	EXPRESSIONSTATEMENTSEMICOLON
+ return	RETURN
+-request	VARIABLENAME
++publication	VARIABLENAME
+ ;	RETURNSTATEMENTSEMICOLON
+ }	RIGHTCATCHCLAUSEBRACKET
+ }	RIGHTMETHODBRACKET
+```
+
+- R60
+
+```
+====== DIFF: a/src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousDeliveryRequest(MessagePublication,long,TimeUnit).mjava ======
+diff --git a/src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousDeliveryRequest(MessagePublication,long,TimeUnit).mjava b/src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousPublication(MessagePublication,long,TimeUnit).mjava
+similarity index 60%
+rename from src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousDeliveryRequest(MessagePublication,long,TimeUnit).mjava
+rename to src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousPublication(MessagePublication,long,TimeUnit).mjava
+index 8fa9250..57ad85f 100644
+--- a/src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousDeliveryRequest(MessagePublication,long,TimeUnit).mjava
++++ b/src/main/java/net/engio/mbassy/bus/AbstractSyncAsyncMessageBus#protected_MessagePublication_addAsynchronousPublication(MessagePublication,long,TimeUnit).mjava
+@@ -1,9 +1,9 @@
+ protected	PROTECTED
+ MessagePublication	TYPENAME
+-addAsynchronousDeliveryRequest	DECLAREDMETHODNAME
++addAsynchronousPublication	DECLAREDMETHODNAME
+ (	LEFTMETHODPAREN
+ MessagePublication	TYPENAME
+-request	VARIABLENAME
++publication	VARIABLENAME
+ ,	METHODDECLARAIONPARAMETERCOMMA
+ long	LONG
+ timeout	VARIABLENAME
+@@ -19,20 +19,20 @@ pendingMessages	VARIABLENAME
+ .	DOT
+ offer	INVOKEDMETHODNAME
+ (	LEFTMETHODINVOCATIONPAREN
+-request	VARIABLENAME
++publication	VARIABLENAME
+ ,	METHODINVOCATIONCOMMA
+ timeout	VARIABLENAME
+ ,	METHODINVOCATIONCOMMA
+ unit	VARIABLENAME
+ )	RIGHTMETHODINVOCATIONPAREN
+ ?	QUESTION
+-request	VARIABLENAME
++publication	VARIABLENAME
+ .	DOT
+ markScheduled	INVOKEDMETHODNAME
+ (	LEFTMETHODINVOCATIONPAREN
+ )	RIGHTMETHODINVOCATIONPAREN
+ :	COLON
+-request	VARIABLENAME
++publication	VARIABLENAME
+ ;	RETURNSTATEMENTSEMICOLON
+ }	RIGHTTRYBRACKET
+ catch	CATCH
+@@ -41,8 +41,21 @@ InterruptedException	TYPENAME
+ e	VARIABLENAME
+ )	RIGHTCATCHCLAUSEPAREN
+ {	LEFTCATCHCLAUSEBRACKET
++handlePublicationError	INVOKEDMETHODNAME
++(	LEFTMETHODINVOCATIONPAREN
++new	NEW
++PublicationError	TYPENAME
++(	LEFTCLASSINSTANCECREATIONPAREN
++e	VARIABLENAME
++,	CLASSINSTANCECREATIONCOMMA
++"Error while adding an asynchronous message publication"	STRINGLITERAL
++,	CLASSINSTANCECREATIONCOMMA
++publication	VARIABLENAME
++)	RIGHTCLASSINSTANCECREATIONPAREN
++)	RIGHTMETHODINVOCATIONPAREN
++;	EXPRESSIONSTATEMENTSEMICOLON
+ return	RETURN
+-request	VARIABLENAME
++publication	VARIABLENAME
+ ;	RETURNSTATEMENTSEMICOLON
+ }	RIGHTCATCHCLAUSEBRACKET
+ }	RIGHTMETHODBRACKET
+```
 
