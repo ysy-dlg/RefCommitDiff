@@ -547,7 +547,6 @@ Filename: `ClassName#AccessModifier_ReturnType_MethodName(ParameterList).mjava`
 	INVOKEDMETHODNAME
 	IS
 	JAVADOCCOMMENT
-	JavaToken
 	LABELNAME
 	LAMBDA
 	LAMBDAEXPRESSIONCOMMA
