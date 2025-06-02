@@ -14,7 +14,7 @@ https://github.com/ysy-dlg/RefCommitDiff/releases/tag/v1.0.0
 There are eight tables in commit_diff_db.
 ```shell-session
 sqlite> .tables
-commit_diff_lines_finergit    commits_finergit_hayashi    
+commit_diff_lines_finergit       
 commit_file_changes_finergit  commits_original            
 commit_file_changes_original  finergit_original_mapping   
 commit_hunks_finergit         repository                   
@@ -131,25 +131,6 @@ commit_hunks_finergit         repository
 
 </details>
 
-<details>
-<summary>Table <code>commits_finergit_hayashi</code></summary>
-
-- The schema of table `commits_finergit_hayashi` is as follows.
-  - To set the primary key, an auto-increment ID was added.
-
-| Field Name             | Data Type      | Nullable | Primary/Foreign Key | Description                              |
-|-------------------------|----------------|----------|----------------------|------------------------------------------|
-| id                      | INTEGER        | No       | Primary Key          | Auto-increment                          |
-| commit_id               | VARCHAR(40)    | No       |                      | FinerGit commit ID                      |
-| repository_name   | VARCHAR(255)   | No      |                      | Name of the repository, used to identify or describe it      |
-| file_similarity_score   | INTEGER            | No       |                      | Rxx                                  |
-| change_type             | VARCHAR(30)    | No       |                      | Rename Method, Change Parameter, Rename Method+, Move Method, Move Method+, Move and Rename Method, Move and Rename Method+ |
-| change_type_info        | TEXT           | No       |                      |                                          |
-| old_filename           | VARCHAR(255)   | No       |                      |                                          |
-| new_filename           | VARCHAR(255)   | No       |                      |                                          |
-
-
-</details>
 
 <details>
 <summary>Table <code>repository</code></summary>
